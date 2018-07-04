@@ -12,6 +12,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	
 	
 	
+	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var reviewCountRed: UILabel!
     @IBOutlet weak var reviewCountYellow: UILabel!
@@ -32,6 +33,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
     }
 
 	override func viewDidAppear(_ animated: Bool) {
+	
 		super.viewDidAppear(animated)
 		if let product = productDetail {
 			product.manageRank()
@@ -43,6 +45,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			reviewCountGreen.text = String(product.veryGoods)
 			reviewCountYellow.text = String(product.goods)
 			reviewCountRed.text = String(product.bads)
+			collectionView.reloadData()
 			
 		}
 	}
