@@ -8,7 +8,9 @@
 
 import UIKit
 import os.log
-class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
+	
+	
 	
 	@IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var reviewCountRed: UILabel!
@@ -41,8 +43,22 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			reviewCountGreen.text = String(product.veryGoods)
 			reviewCountYellow.text = String(product.goods)
 			reviewCountRed.text = String(product.bads)
+			
 		}
 	}
+	// MARK: UICollectionViewDataSource
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return productDetail?.reviewProduct.count ?? 0
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellDetail", for: indexPath as IndexPath) as! ShowDetailCollectionViewCell
+		let reviewProduct = productDetail?.reviewProduct ?? []
+		let product = reviewProduct[indexPath.row]
+		cell.configureWith(value: product)
+		return cell
+	}
+	
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -92,6 +108,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
 			}
 		}
+		
 	}
 	
 	@IBAction func onEdit(sender: UIBarButtonItem) { //กดปุ่มedit ก็จะsegueไปยังidentitieที่performไว้ แล้วจะส่งค่าต่างๆที่func prepare

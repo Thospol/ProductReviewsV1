@@ -17,6 +17,16 @@ class ProductCollectionViewCell: UICollectionViewCell {
 	
     @IBOutlet weak var productReview: UILabel!
 	
+	@IBOutlet weak var maxButtonReview: UIButton!
+	
+	@IBOutlet weak var greenNumberCount: UILabel!
+	
+	@IBOutlet weak var maxButtonReviewYellow: UIButton!
+	
+	@IBOutlet weak var yellowNumberCount: UILabel!
+	
+	@IBOutlet weak var maxButtonReviewRed: UIButton!
+	@IBOutlet weak var redNumberCount: UILabel!
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		contentView.layer.cornerRadius = 10
@@ -36,6 +46,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
 		productReview.text = value.desc 
 		productPrice.text = String(value.price)
 		productReview.text = String(value.reviewProduct.count)
+		greenNumberCount.text = String(value.veryGoods)
+		yellowNumberCount.text = String(value.goods)
+		redNumberCount.text = String(value.bads)
+		
 	}
+	
 }
 

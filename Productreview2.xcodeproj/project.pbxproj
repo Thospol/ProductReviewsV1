@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC220C4820ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC220C4720ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift */; };
 		EC3882E020EC66B000C60281 /* Productreview2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */; };
 		EC76EB9720EA1DE900184EA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */; };
 		EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC220C4720ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3882DD20EC66B000C60281 /* Productreview2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Productreview2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productreview2Tests.swift; sourceTree = "<group>"; };
 		EC3882E120EC66B000C60281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */,
 				EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */,
 				EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */,
+				EC220C4720ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift */,
 			);
 			path = Productreview2;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC220C4820ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift in Sources */,
 				ECFF4BAD20E7B209000C57FA /* ProductCollectionViewController.swift in Sources */,
 				EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */,
 				EC76EB9D20EA7A8100184EA7 /* AddReviewViewController.swift in Sources */,

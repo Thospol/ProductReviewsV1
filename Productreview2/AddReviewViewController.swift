@@ -18,6 +18,10 @@ class AddReviewViewController: UIViewController {
 	@IBOutlet weak var peoductReviewDesc: UITextView!
 	@IBOutlet weak var nameReview: UITextField!
 	@IBOutlet weak var reviewButton: UIButton!
+	@IBOutlet weak var veryGoodLabel: UILabel!
+	@IBOutlet weak var okLabel: UILabel!
+	@IBOutlet weak var badLabel: UILabel!
+	
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
 	var Rank: ReviewRank? = ReviewRank.veryGood
@@ -34,7 +38,50 @@ class AddReviewViewController: UIViewController {
 			productDesc.text = product.desc
 		}
     }
+	func ChageReviewGreenTrue(){
+		colorRed.alpha = 0
+		colorYellow.alpha = 0
+		okLabel.alpha = 0
+		badLabel.alpha = 0
+		countCheckClick = 1
+	}
+	func ChangeReviewGreenFalse(){
+		colorRed.alpha = 1
+		colorYellow.alpha = 1
+		okLabel.alpha = 1
+		badLabel.alpha = 1
+		countCheckClick = 0
+	}
 	
+	func ChageReviewYellowTrue(){
+		colorGreen.alpha = 0
+		colorRed.alpha = 0
+		veryGoodLabel.alpha = 0
+		badLabel.alpha = 0
+		countCheckClick = 1
+	}
+	func ChangeReviewYellowFalse(){
+		colorGreen.alpha = 1
+		colorRed.alpha = 1
+		veryGoodLabel.alpha = 1
+		badLabel.alpha = 1
+		countCheckClick = 0
+	}
+	
+	func ChageReviewRedTrue(){
+		colorGreen.alpha = 0
+		colorYellow.alpha = 0
+		veryGoodLabel.alpha = 0
+		okLabel.alpha = 0
+		countCheckClick = 1
+	}
+	func ChangeReviewRedFalse(){
+		colorGreen.alpha = 1
+		colorYellow.alpha = 1
+		veryGoodLabel.alpha = 1
+		okLabel.alpha = 1
+		countCheckClick = 0
+	}
 	//REMARK:- Segua
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if reviewButton === sender as! UIButton {
@@ -58,13 +105,9 @@ class AddReviewViewController: UIViewController {
 	//REMARK:-Icon
 	@IBAction func ClickIconGreen(_ sender: Any) {
 		if countCheckClick == 0 {
-		colorRed.alpha = 0
-		colorYellow.alpha = 0
-			countCheckClick = 1
+		ChageReviewGreenTrue()
 		}else if countCheckClick == 1 {
-			colorRed.alpha = 1
-			colorYellow.alpha = 1
-			countCheckClick = 0
+		ChangeReviewGreenFalse()
 		}
 		Rank = ReviewRank.veryGood
 		color = UIColor.green
@@ -73,13 +116,9 @@ class AddReviewViewController: UIViewController {
 	}
 	@IBAction func ClickIconYellow(_ sender: Any) {
 		if countCheckClick == 0 {
-			colorGreen.alpha = 0
-			colorRed.alpha = 0
-			countCheckClick = 1
+			ChageReviewYellowTrue()
 		}else if countCheckClick == 1 {
-			colorGreen.alpha = 1
-			colorRed.alpha = 1
-			countCheckClick = 0
+			ChangeReviewYellowFalse()
 		}
 		Rank = ReviewRank.good
 		color = UIColor.yellow
@@ -87,18 +126,16 @@ class AddReviewViewController: UIViewController {
 	}
 	@IBAction func ClickIconRed(_ sender: Any) {
 		if countCheckClick == 0 {
-			colorGreen.alpha = 0
-			colorYellow.alpha = 0
-			countCheckClick = 1
+			ChageReviewRedTrue()
 		}else if countCheckClick == 1 {
-			colorGreen.alpha = 1
-			colorYellow.alpha = 1
-			countCheckClick = 0
+			ChangeReviewRedFalse()
 		}
 		Rank = ReviewRank.bad
 		color = UIColor.red
 		print("Bad")
 	}
+	
+
 	
 	
 
