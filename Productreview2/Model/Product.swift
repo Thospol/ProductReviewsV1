@@ -1,10 +1,3 @@
-//
-//  Product.swift
-//  Productreview2
-//
-//  Created by thospol on 30/6/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
 
 import UIKit
 class Product {
