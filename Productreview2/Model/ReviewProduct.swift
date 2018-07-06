@@ -8,9 +8,9 @@ class ReviewProduct {
 	var RComment: String
 	var RName: String
 	var RDate: Date?
-	var colorButton: UIColor?
+	var colorButton: UIImage?
 	
-	init(RProductName: String, RProductImage: UIImage?, RProductDesc: String,RIcon: ReviewRank?,RComment: String,RName: String,RDate: Date,colorButton:UIColor?) {
+	init(RProductName: String, RProductImage: UIImage?, RProductDesc: String,RIcon: ReviewRank?,RComment: String,RName: String,RDate: Date,colorButton:UIImage?) {
 		self.RProductName = RProductName
 		self.RProductImage = RProductImage
 		self.RProductDesc = RProductDesc
@@ -27,7 +27,6 @@ class ReviewProduct {
 		let myString = formatter.string(from: RDate!)
 		let yourDate = formatter.date(from: myString)!
 		formatter.dateFormat = "dd-MMM-yyyy"
-		
 		return formatter.string(from: yourDate)
 	}
 }

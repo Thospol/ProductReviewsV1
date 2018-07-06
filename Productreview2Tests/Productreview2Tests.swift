@@ -16,13 +16,6 @@ class Productreview2Tests: XCTestCase {
     func testExample() {
 		var mock = [ReviewProduct].init()
 		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
 		UserDefault.default.setReview(reviewProducts: mock)
 		UserDefault.default.getReviewProducts().forEach { (object) in
 			print(object)

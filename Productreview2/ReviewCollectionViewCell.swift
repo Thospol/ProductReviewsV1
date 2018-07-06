@@ -28,6 +28,6 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		productDescReview.text = value.RComment
 		productRank.text =  value.RIcon?.rawValue
 		productName.text = value.RProductName
-		productReviewIcon.backgroundColor = value.colorButton
+		productReviewIcon.setBackgroundImage(value.colorButton, for: .normal)
 	}
 }

@@ -6,7 +6,7 @@ enum Mode {
 	case add
 }
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+class AddProductViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 	
     @IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var productName: UITextField!

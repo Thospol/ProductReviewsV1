@@ -25,7 +25,7 @@ class AddReviewViewController: UIViewController {
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
 	var Rank: ReviewRank? = ReviewRank.veryGood
-	var color: UIColor?
+	var imageSet: UIImage?
 	var countCheckClick: Int = 0
 	
 	
@@ -91,7 +91,7 @@ class AddReviewViewController: UIViewController {
 			let ranking = Rank
 			let reviewDesc = peoductReviewDesc.text ?? ""
 			let nameReviews = nameReview.text ?? ""
-			let colorset = color
+			let colorset = imageSet
 			
 			let review = ReviewProduct(RProductName: productname, RProductImage: photos, RProductDesc: productDesccription, RIcon: ranking, RComment: reviewDesc, RName: nameReviews, RDate: Date(), colorButton: colorset)
 			
@@ -110,7 +110,7 @@ class AddReviewViewController: UIViewController {
 		ChangeReviewGreenFalse()
 		}
 		Rank = ReviewRank.veryGood
-		color = UIColor.green
+		imageSet = UIImage(named: "verygood")
 		print("VeryGood")
 		
 	}
@@ -121,7 +121,7 @@ class AddReviewViewController: UIViewController {
 			ChangeReviewYellowFalse()
 		}
 		Rank = ReviewRank.good
-		color = UIColor.yellow
+		imageSet = UIImage(named: "good")
 		print("Good")
 	}
 	@IBAction func ClickIconRed(_ sender: Any) {
@@ -131,7 +131,7 @@ class AddReviewViewController: UIViewController {
 			ChangeReviewRedFalse()
 		}
 		Rank = ReviewRank.bad
-		color = UIColor.red
+		imageSet = UIImage(named: "bad")
 		print("Bad")
 	}
 	

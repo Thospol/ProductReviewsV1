@@ -1,16 +1,7 @@
-//
-//  ShowDetailViewController.swift
-//  Productreview2
-//
-//  Created by thospol on 1/7/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
 
 import UIKit
 import os.log
 class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
-	
-	
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var productimage: UIImageView!
@@ -19,9 +10,8 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var reviewCountGreen: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
-    @IBOutlet weak var productDesc: UITextView!
+	@IBOutlet weak var productDescription: UITextView!
 	@IBOutlet weak var editButton: UIBarButtonItem!
-	
 	
 	var productDetail: Product?
 	var indexpathProduct: IndexPath?
@@ -40,7 +30,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			navigationItem.title = product.product
 			productName.text   = product.product
 			productimage.image = product.photo
-			productDesc.text = product.desc
+			productDescription.text = product.desc
 			productPrice.text = String(product.price)
 			reviewCountGreen.text = String(product.veryGoods)
 			reviewCountYellow.text = String(product.goods)
@@ -92,7 +82,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
 		super.prepare(for: segue, sender: sender)
-		if let viewController = segue.destination as? ViewController{
+		if let viewController = segue.destination as? AddProductViewController{
 		if let data = productDetail {
 			viewController.dataProductViewcontroller = data
 			viewController.indexpathProduct = indexpathProduct

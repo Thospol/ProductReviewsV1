@@ -33,6 +33,6 @@ class ShowDetailCollectionViewCell: UICollectionViewCell {
 		dateReviewLabel.text = value.viewDate
 		//textviewReview.text = value.RComment
 		rankReviewLabel.text =  value.RIcon?.rawValue
-		buttonReview.backgroundColor = value.colorButton
+		buttonReview.setBackgroundImage(value.colorButton, for: .normal)
 	}
 }
