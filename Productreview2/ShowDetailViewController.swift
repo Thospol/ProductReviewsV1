@@ -20,6 +20,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
     }
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -99,6 +100,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			print("Data is:\(data)")
 			print("Index path is:\(ReviewViewController.indexpathProduct!)")
 			print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
+				
 			}
 		}
 		

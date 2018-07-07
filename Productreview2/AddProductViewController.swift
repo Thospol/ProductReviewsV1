@@ -1,6 +1,6 @@
 import UIKit
 import os.log
-
+import SkyFloatingLabelTextField
 enum Mode {
 	case edit
 	case add
@@ -9,13 +9,12 @@ enum Mode {
 class AddProductViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
 	
     @IBOutlet weak var productimage: UIImageView!
-    @IBOutlet weak var productName: UITextField!
+    @IBOutlet weak var productName: UITextView!
     @IBOutlet weak var productdesc: UITextView!
-    @IBOutlet weak var productPrice: UITextField!
+    @IBOutlet weak var productPrice: UITextView!
     @IBOutlet weak var productButton: UIButton!
 	@IBOutlet weak var showdefaultPictrue: UIImageView!
 	@IBOutlet weak var showdefaultLabel: UILabel!
-	
 	var dataProductViewcontroller : Product?
 	var indexpathProduct: IndexPath?
 	var mode: Mode? = Mode.add
@@ -29,22 +28,14 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
 			productimage.image = product.photo
 			productdesc.text = product.desc
 			productPrice.text = String(product.price)
+			showdefaultPictrue.isHidden = true
+			showdefaultLabel.isHidden = true
 		}
+       // updateSaveButtonState()
 		
-        setTextView()
-        updateSaveButtonState()
     }
- 
-    func setTextView(){
-        productdesc.layer.borderWidth = 1.0
-        productdesc.layer.borderColor = UIColor.clear.cgColor
-        productdesc.layer.masksToBounds = true
-        productdesc.layer.shadowColor = UIColor.black.cgColor
-        productdesc.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        productdesc.layer.shadowOpacity = 1.0
-        productdesc.layer.shadowRadius = 2.0
-        productdesc.layer.backgroundColor = UIColor.clear.cgColor
-    }
+	
+
     
     //REMARK:- delegateTextField
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -11,7 +11,7 @@ import UIKit
 class ShowDetailCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var nameProviderReview: UILabel!
 	@IBOutlet weak var dateReviewLabel: UILabel!
-	@IBOutlet weak var rankReviewLabel: UILabel!
+	//@IBOutlet weak var rankReviewLabel: UILabel!
 	@IBOutlet weak var buttonReview: UIButton!
 	@IBOutlet weak var textviewReview: UILabel!
 	
@@ -31,8 +31,9 @@ class ShowDetailCollectionViewCell: UICollectionViewCell {
 	func configureWith(value: ReviewProduct) {
 		nameProviderReview.text = value.RName
 		dateReviewLabel.text = value.viewDate
-		//textviewReview.text = value.RComment
-		rankReviewLabel.text =  value.RIcon?.rawValue
+		textviewReview.numberOfLines = 4
+		textviewReview.text = value.RComment
+		//rankReviewLabel.text =  value.RIcon?.rawValue
 		buttonReview.setBackgroundImage(value.colorButton, for: .normal)
 	}
 }

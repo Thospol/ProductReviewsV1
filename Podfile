@@ -7,6 +7,8 @@ target 'Productreview2' do
 
   # Pods for Productreview2
   pod 'JVFloatLabeledTextField'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+
 
   target 'Productreview2Tests' do
     inherit! :search_paths

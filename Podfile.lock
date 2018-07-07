@@ -1,16 +1,20 @@
 PODS:
   - JVFloatLabeledTextField (1.2.1)
+  - SkyFloatingLabelTextField (3.5.1)
 
 DEPENDENCIES:
   - JVFloatLabeledTextField
+  - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - JVFloatLabeledTextField
+    - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   JVFloatLabeledTextField: cfc44e3c4d493b2ed92ede8035e8e89c2912ba64
+  SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
 
-PODFILE CHECKSUM: 8f77af455d9f59dbc83972f4f60a02ed8004eea9
+PODFILE CHECKSUM: 37e0265efb586194fff3292bfa549255e2d85a24
 
 COCOAPODS: 1.5.3
