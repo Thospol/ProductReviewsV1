@@ -13,6 +13,8 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var productdesc: UITextView!
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var productButton: UIButton!
+	@IBOutlet weak var showdefaultPictrue: UIImageView!
+	@IBOutlet weak var showdefaultLabel: UILabel!
 	
 	var dataProductViewcontroller : Product?
 	var indexpathProduct: IndexPath?
@@ -22,7 +24,7 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
         super.viewDidLoad()
 		
 		if let product = dataProductViewcontroller {
-			navigationItem.title = product.product //แสดงบน navigation
+			//navigationItem.title = String(product.price) //แสดงบน navigation
 			productName.text   = product.product
 			productimage.image = product.photo
 			productdesc.text = product.desc
@@ -92,6 +94,9 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
         }
         // Set ให้ไปลงใน imageview
         productimage.image = selectedImage
+		showdefaultPictrue.isHidden = true
+		showdefaultLabel.isHidden = true
+		
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }

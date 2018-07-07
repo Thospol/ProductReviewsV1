@@ -27,7 +27,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		super.viewDidAppear(animated)
 		if let product = productDetail {
 			product.manageRank()
-			navigationItem.title = product.product
+//			navigationItem.title = product.product
 			productName.text   = product.product
 			productimage.image = product.photo
 			productDescription.text = product.desc

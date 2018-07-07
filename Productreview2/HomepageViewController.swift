@@ -1,10 +1,4 @@
-//
-//  HomepageViewController.swift
-//  Productreview2
-//
-//  Created by thospol on 6/7/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
+
 
 import UIKit
 
@@ -19,11 +13,10 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		loadSampleMeals()
-		
+		loadSampleMeals();
 	}
 	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
+		super.viewDidAppear(animated);	self.navigationController?.isNavigationBarHidden = true
 		col?.reloadData()
 	}
 	//REMARK:- collectionView
@@ -64,6 +57,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	
 	//REMARK:-SelectItemViewComtroller
 	 func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		self.navigationController?.isNavigationBarHidden = false
 		print("You selected cell #\(indexPath.item)!")
 		if indexPath.row == 0 {
 			performSegue(withIdentifier: "AddItem", sender: nil)
@@ -73,6 +67,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 			self.indexPath = indexPath
 			performSegue(withIdentifier: "ShowDetail", sender: nil)
 		}
+		
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let showDet = segue.destination as? ShowDetailViewController{

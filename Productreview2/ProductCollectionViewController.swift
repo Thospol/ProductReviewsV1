@@ -69,6 +69,7 @@ class ProductCollectionViewController: UICollectionViewController {
 		}
 	}
 	
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //การแสดงผล
 		super.prepare(for: segue, sender: sender)
 		
