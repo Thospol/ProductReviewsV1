@@ -72,8 +72,6 @@ class ProductCollectionViewController: UICollectionViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //การแสดงผล
 		super.prepare(for: segue, sender: sender)
-		
-		
 			 if let showDet = segue.destination as? ShowDetailViewController{
 				if let datas = pushData {
 					showDet.productDetail = datas
@@ -82,7 +80,6 @@ class ProductCollectionViewController: UICollectionViewController {
 				}
 			}
 			else{
-				
 				let ShowDetailViewController = segue.destination as? ProductDetailViewController  //อ้างอิงไปยัง segue ของ ShowDetailViewController
 					if let data = pushData {
 						ShowDetailViewController?.modelProduct = data //ส่งdataไปยัง controlellerที่segue

@@ -27,7 +27,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if indexPath.item == 0 {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier1, for: indexPath as IndexPath) as! HomepageCollectionViewCell
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier1, for: indexPath as IndexPath) as! HomepageAddCollectionViewCell
 			return cell
 		}else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! HomepageCollectionViewCell

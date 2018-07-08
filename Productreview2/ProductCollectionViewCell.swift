@@ -45,7 +45,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 		productImage.image = value.photo
 		productName.text = value.product
 		productReview.text = value.desc 
-		productPrice.text = String(value.price)
+		productPrice.text = "\(String(value.price)) ฿"
 		productReview.text = String(value.reviewProduct.count)
 		greenNumberCount.text = String(value.veryGoods)
 		yellowNumberCount.text = String(value.goods)

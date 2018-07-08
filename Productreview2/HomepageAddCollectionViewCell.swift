@@ -1,22 +1,16 @@
 //
-//  HomepageCollectionViewCell.swift
+//  HomepageAddCollectionViewCell.swift
 //  Productreview2
 //
-//  Created by thospol on 6/7/61.
+//  Created by thospol on 8/7/61.
 //  Copyright © พ.ศ. 2561 thospol. All rights reserved.
 //
 
 import UIKit
 
-class HomepageCollectionViewCell: UICollectionViewCell {
+class HomepageAddCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var iconPlus: UIImageView!
 	@IBOutlet weak var addlabel: UILabel!
-	@IBOutlet weak var productImage: UIImageView!
-	@IBOutlet weak var productName: UILabel!
-	@IBOutlet weak var productPrice: UILabel!
-	@IBOutlet weak var productIcon: UIImageView!
-	@IBOutlet weak var prodcuctNumberOfIcon: UILabel!
-	@IBOutlet weak var productNumberOfReview: UILabel!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -30,12 +24,5 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 		layer.shadowOpacity = 1.0
 		layer.masksToBounds = false
 		layer.shadowPath = UIBezierPath(roundedRect:bounds, cornerRadius:contentView.layer.cornerRadius).cgPath
-	}
-	
-	func configureData(value: Product){
-		productImage.image = value.photo
-		productName.text = value.product
-		productPrice.text = "\(String(value.price)) ฿"
-		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)
 	}
 }

@@ -17,6 +17,7 @@
 		EC220C6420EFB05A00D9E32F /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EC220C6320EFB04600D9E32F /* Gotham-Medium.otf */; };
 		EC220C6620EFB53B00D9E32F /* HomepageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC220C6520EFB53B00D9E32F /* HomepageCollectionViewCell.swift */; };
 		EC220C6A20EFB60300D9E32F /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC220C6920EFB60300D9E32F /* HomepageViewController.swift */; };
+		EC220C6C20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC220C6B20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift */; };
 		EC3882E020EC66B000C60281 /* Productreview2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */; };
 		EC76EB9720EA1DE900184EA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */; };
 		EC76EB9920EA25E900184EA7 /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */; };
@@ -60,6 +61,7 @@
 		EC220C6320EFB04600D9E32F /* Gotham-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Medium.otf"; sourceTree = "<group>"; };
 		EC220C6520EFB53B00D9E32F /* HomepageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC220C6920EFB60300D9E32F /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		EC220C6B20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageAddCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC3882DD20EC66B000C60281 /* Productreview2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Productreview2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3882DF20EC66B000C60281 /* Productreview2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productreview2Tests.swift; sourceTree = "<group>"; };
 		EC3882E120EC66B000C60281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				EC220C5D20EF5D9000D9E32F /* ProductDetailViewController.swift */,
 				EC220C6520EFB53B00D9E32F /* HomepageCollectionViewCell.swift */,
 				EC220C6920EFB60300D9E32F /* HomepageViewController.swift */,
+				EC220C6B20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift */,
 			);
 			path = Productreview2;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC220C6C20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift in Sources */,
 				EC220C6620EFB53B00D9E32F /* HomepageCollectionViewCell.swift in Sources */,
 				EC220C4820ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift in Sources */,
 				ECFF4BAD20E7B209000C57FA /* ProductCollectionViewController.swift in Sources */,

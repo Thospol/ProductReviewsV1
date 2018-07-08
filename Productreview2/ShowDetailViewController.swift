@@ -32,7 +32,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			productName.text   = product.product
 			productimage.image = product.photo
 			productDescription.text = product.desc
-			productPrice.text = String(product.price)
+			productPrice.text = "\(String(product.price)) ฿"
 			reviewCountGreen.text = String(product.veryGoods)
 			reviewCountYellow.text = String(product.goods)
 			reviewCountRed.text = String(product.bads)

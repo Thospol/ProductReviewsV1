@@ -9,18 +9,16 @@
 import UIKit
 
 class AddReviewViewController: UIViewController {
-	@IBOutlet weak var productName: UITextField!
+	@IBOutlet weak var productName: UILabel!
 	@IBOutlet weak var productImage: UIImageView!
-	@IBOutlet weak var productDesc: UITextView!
+	@IBOutlet weak var prodcutPrice: UILabel!
+	@IBOutlet weak var productDesc: UILabel!
 	@IBOutlet weak var colorGreen: UIButton!
 	@IBOutlet weak var colorYellow: UIButton!
 	@IBOutlet weak var colorRed: UIButton!
-	@IBOutlet weak var peoductReviewDesc: UITextView!
+	@IBOutlet weak var peoductReviewDesc: UITextField!
 	@IBOutlet weak var nameReview: UITextField!
 	@IBOutlet weak var reviewButton: UIButton!
-	@IBOutlet weak var veryGoodLabel: UILabel!
-	@IBOutlet weak var okLabel: UILabel!
-	@IBOutlet weak var badLabel: UILabel!
 	
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
@@ -31,55 +29,45 @@ class AddReviewViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		imageSet = UIImage(named: "verygood")
+		productDesc.numberOfLines = 5
 		if let product = dataProduct {
-			navigationItem.title = product.product 
 			productName.text   = product.product
 			productImage.image = product.photo
 			productDesc.text = product.desc
+			prodcutPrice.text = "\(String(product.price)) ฿"
 		}
     }
 	func ChageReviewGreenTrue(){
 		colorRed.alpha = 0
 		colorYellow.alpha = 0
-		okLabel.alpha = 0
-		badLabel.alpha = 0
 		countCheckClick = 1
 	}
 	func ChangeReviewGreenFalse(){
 		colorRed.alpha = 1
 		colorYellow.alpha = 1
-		okLabel.alpha = 1
-		badLabel.alpha = 1
 		countCheckClick = 0
 	}
 	
 	func ChageReviewYellowTrue(){
 		colorGreen.alpha = 0
 		colorRed.alpha = 0
-		veryGoodLabel.alpha = 0
-		badLabel.alpha = 0
 		countCheckClick = 1
 	}
 	func ChangeReviewYellowFalse(){
 		colorGreen.alpha = 1
 		colorRed.alpha = 1
-		veryGoodLabel.alpha = 1
-		badLabel.alpha = 1
 		countCheckClick = 0
 	}
 	
 	func ChageReviewRedTrue(){
 		colorGreen.alpha = 0
 		colorYellow.alpha = 0
-		veryGoodLabel.alpha = 0
-		okLabel.alpha = 0
 		countCheckClick = 1
 	}
 	func ChangeReviewRedFalse(){
 		colorGreen.alpha = 1
 		colorYellow.alpha = 1
-		veryGoodLabel.alpha = 1
-		okLabel.alpha = 1
 		countCheckClick = 0
 	}
 	//REMARK:- Segua
@@ -135,7 +123,8 @@ class AddReviewViewController: UIViewController {
 		print("Bad")
 	}
 	
-
+	
+	
 	
 	
 
