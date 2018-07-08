@@ -74,12 +74,19 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func Cancleclick(_ sender: Any) {
-		navigationController?.dismiss(animated: true, completion: nil)
-        dismiss(animated: true, completion: nil)
+    @IBAction func CancleShowDetail(_ sender: Any) {
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+		
+		if isPresentingInAddMealMode {
+			dismiss(animated: true, completion: nil)
+		}
+		else if let owningNavigationController = navigationController{
+			owningNavigationController.popViewController(animated: true)
+		}
+		else {
+			fatalError("Unexpected")
+		}
     }
-	
-	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
 		super.prepare(for: segue, sender: sender)
@@ -103,14 +110,12 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 				
 			}
 		}
-		
 	}
 	
-	@IBAction func onEdit(sender: UIBarButtonItem) { //กดปุ่มedit ก็จะsegueไปยังidentitieที่performไว้ แล้วจะส่งค่าต่างๆที่func prepare
+	@IBAction func onEdit(sender: UIBarButtonItem) {
 		mode = Mode.edit
 		performSegue(withIdentifier: "ShowDetailEdit", sender: nil)
 	}
-    
 	@IBAction func ShowallReview(_ sender: Any) {
 		performSegue(withIdentifier: "ShowReview", sender: nil)
 	}

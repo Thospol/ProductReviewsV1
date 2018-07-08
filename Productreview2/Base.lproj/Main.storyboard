@@ -485,7 +485,14 @@
                         <viewLayoutGuide key="safeArea" id="F7l-eT-QnD"/>
                     </view>
                     <navigationItem key="navigationItem" title="สินค้า" id="zAr-jj-yzA">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="TWY-Qt-nZC">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="CancleShowDetail:" destination="rl9-5k-wPb" id="yp7-Gn-hCs"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="แก้ไข" id="HmL-Se-Q2f">
+                            <color key="tintColor" red="0.0" green="0.5607843137254902" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onEditWithSender:" destination="rl9-5k-wPb" id="tnG-dx-mrm"/>
                             </connections>
@@ -536,8 +543,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="357" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-30-ZHl">
-                                            <rect key="frame" x="23.999999999999996" y="0.0" width="54.666666666666657" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-30-ZHl">
+                                            <rect key="frame" x="24" y="0.0" width="82" height="28"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -561,12 +568,13 @@
                                                 <constraint firstAttribute="height" constant="27" id="40M-QL-iCK"/>
                                                 <constraint firstAttribute="width" constant="129" id="bSd-kY-YnN"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Medium" family="Sukhumvit Set" pointSize="15"/>
+                                            <color key="textColor" red="0.70119900173611116" green="0.70353190104166663" blue="0.70035807291666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dateicon" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-9n-fr7">
-                                            <rect key="frame" x="192.66666666666666" y="6" width="16" height="15"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dateicon" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-9n-fr7">
+                                            <rect key="frame" x="187.66666666666663" y="1" width="25" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ไม่มีข้อมูล..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-lf-h02">
                                             <rect key="frame" x="98" y="39" width="250" height="109"/>
@@ -591,15 +599,12 @@
                                     <constraint firstAttribute="bottomMargin" secondItem="lp3-7K-UzD" secondAttribute="bottom" constant="78" id="2IN-p4-cwf"/>
                                     <constraint firstItem="lp3-7K-UzD" firstAttribute="top" secondItem="5Xr-30-ZHl" secondAttribute="bottom" constant="10" id="5eV-pe-hkG"/>
                                     <constraint firstItem="lp3-7K-UzD" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="23" id="EcK-12-m5o"/>
-                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="leading" secondItem="nCi-9n-fr7" secondAttribute="trailing" constant="8" id="QUO-Vy-ueY"/>
                                     <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="bB4-Au-NgN" secondAttribute="bottom" constant="12" id="SYO-7K-Qjj"/>
                                     <constraint firstAttribute="trailing" secondItem="bB4-Au-NgN" secondAttribute="trailing" constant="11" id="T6U-U0-nRm"/>
                                     <constraint firstItem="5Xr-30-ZHl" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="bNj-KD-Zmn"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="12" id="mTS-ez-945"/>
-                                    <constraint firstItem="nCi-9n-fr7" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" constant="6" id="oWl-w6-Rqe"/>
                                     <constraint firstItem="5Xr-30-ZHl" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leading" constant="24" id="oo2-VE-LDA"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="1" id="p0a-le-XaP"/>
-                                    <constraint firstItem="nCi-9n-fr7" firstAttribute="leading" secondItem="5Xr-30-ZHl" secondAttribute="trailing" constant="114" id="p7C-ID-OeR"/>
                                     <constraint firstItem="ssu-lf-h02" firstAttribute="leading" secondItem="lp3-7K-UzD" secondAttribute="trailing" constant="23" id="vph-a1-iSj"/>
                                     <constraint firstItem="bB4-Au-NgN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="yN2-BP-hvg"/>
                                 </constraints>
@@ -668,7 +673,14 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="รีวิวสินค้า" id="QzO-Wc-agU">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="Rm9-qm-Yr0">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="CancleReviewCollection:" destination="ZZu-E1-qNo" id="pWn-DM-LaL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="mLc-hY-ODd">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="AddReview:" destination="ZZu-E1-qNo" id="fhB-1z-0x0"/>
                             </connections>
@@ -791,7 +803,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="เพิ่มสินค้า" id="bE6-We-mjK"/>
+                    <navigationItem key="navigationItem" title="เพิ่มสินค้า" id="bE6-We-mjK">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="rbm-v6-Wih">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="CancleAddProduct:" destination="BYZ-38-t0r" id="BeC-tS-vyI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="productButton" destination="pcw-Fd-PEf" id="IqC-xl-hrv"/>
                         <outlet property="productName" destination="IeW-eW-QQ2" id="4lw-vu-1z4"/>
@@ -1010,7 +1029,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vhB-Qo-n36"/>
                     </view>
-                    <navigationItem key="navigationItem" title="รีวิวสินค้า" id="DGC-WG-H5T"/>
+                    <navigationItem key="navigationItem" title="รีวิวสินค้า" id="DGC-WG-H5T">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="adg-r1-kgj">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="CancleAddReview:" destination="0FH-JW-drq" id="dIH-vn-eLo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="colorGreen" destination="vhw-Jy-bW2" id="aLq-uf-WyC"/>
                         <outlet property="colorRed" destination="FWa-sf-mvx" id="1GJ-4U-cgy"/>
@@ -1231,6 +1257,7 @@
         <image name="Imageadd" width="48" height="36"/>
         <image name="add" width="25" height="25"/>
         <image name="addpictrue" width="100" height="100"/>
+        <image name="back" width="12" height="21"/>
         <image name="bad" width="48" height="48"/>
         <image name="buttonadd" width="250" height="48"/>
         <image name="comment" width="14" height="13"/>

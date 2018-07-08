@@ -1,8 +1,6 @@
 import UIKit
 
 class ReviewViewController: UICollectionViewController {
-	
-	@IBOutlet weak var headerReview: ReviewCollectionViewCell!
 	private let reuseIdentifier = "cellReview"
 	var productFromProduct: Product?
 	var checkNameProduct: String?
@@ -58,6 +56,20 @@ class ReviewViewController: UICollectionViewController {
 			}
 		}
 		
+	}
+	
+	@IBAction func CancleReviewCollection(_ sender: Any) {
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+		
+		if isPresentingInAddMealMode {
+			dismiss(animated: true, completion: nil)
+		}
+		else if let owningNavigationController = navigationController{
+			owningNavigationController.popViewController(animated: true)
+		}
+		else {
+			fatalError("Unexpected")
+		}
 	}
 	@IBAction func unwindToReviewProductList(sender: UIStoryboardSegue) {
 	}

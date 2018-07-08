@@ -16,7 +16,6 @@ class Product {
 		self.desc = desc
 		self.price = price
 	}
-	
 	func manageRank() {
 		veryGoods = 0
 		goods = 0
@@ -31,8 +30,6 @@ class Product {
 		
 	}
 }
-
-
 struct UserModel {
 	static var product = [Product].init()
 }

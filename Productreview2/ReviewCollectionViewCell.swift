@@ -12,7 +12,6 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var numberOfbad: UILabel!
 	
 	override func awakeFromNib() {
-		
 		super.awakeFromNib()
 		contentView.layer.cornerRadius = 10
 		contentView.layer.borderWidth = 1.0
@@ -29,8 +28,6 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		productNameReview.text = value.RName
 		productDateReview.text = value.viewDate
 		productDescReview.text = value.RComment
-		//productRank.text =  value.RIcon?.rawValue
-		//productName.text = value.RProductName
 		productReviewIcon.setBackgroundImage(value.colorButton, for: .normal)
 	}
 	func configureWithHeader(value: Product) {

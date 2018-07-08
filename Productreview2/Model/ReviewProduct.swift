@@ -1,7 +1,6 @@
 import UIKit
-
 class ReviewProduct {
-	var RProductName: String
+	var rProductName: String
 	var RProductImage: UIImage?
 	var RProductDesc: String
 	var RIcon: ReviewRank?
@@ -11,7 +10,7 @@ class ReviewProduct {
 	var colorButton: UIImage?
 	
 	init(RProductName: String, RProductImage: UIImage?, RProductDesc: String,RIcon: ReviewRank?,RComment: String,RName: String,RDate: Date,colorButton:UIImage?) {
-		self.RProductName = RProductName
+		self.rProductName = RProductName
 		self.RProductImage = RProductImage
 		self.RProductDesc = RProductDesc
 		self.RIcon = RIcon
@@ -20,7 +19,6 @@ class ReviewProduct {
 		self.RDate = RDate
 		self.colorButton = colorButton
 	}
-	
 	var viewDate: String {
 		let formatter = DateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -30,10 +28,8 @@ class ReviewProduct {
 		return formatter.string(from: yourDate)
 	}
 }
-
 enum ReviewRank:String {
 	case veryGood = "ดีมาก"
 	case good = "ปกติ"
 	case bad = "แย่"
-	
 }

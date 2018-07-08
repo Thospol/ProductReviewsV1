@@ -1,11 +1,3 @@
-//
-//  AddReviewViewController.swift
-//  Productreview2
-//
-//  Created by thospol on 2/7/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
-
 import UIKit
 
 class AddReviewViewController: UIViewController {
@@ -25,8 +17,7 @@ class AddReviewViewController: UIViewController {
 	var Rank: ReviewRank? = ReviewRank.veryGood
 	var imageSet: UIImage?
 	var countCheckClick: Int = 0
-	
-	
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		imageSet = UIImage(named: "verygood")
@@ -171,6 +162,19 @@ class AddReviewViewController: UIViewController {
 		print("Bad")
 	}
 	
+	@IBAction func CancleAddReview(_ sender: Any) {
+		let isPresentingInAddMealMode = presentingViewController is UINavigationController
+		
+		if isPresentingInAddMealMode {
+			dismiss(animated: true, completion: nil)
+		}
+		else if let owningNavigationController = navigationController{
+			owningNavigationController.popViewController(animated: true)
+		}
+		else {
+			fatalError("unexpected")
+		}
+	}
 	
 	
 	
