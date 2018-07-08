@@ -521,36 +521,33 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4ic-Pz-DIm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kCQ-jt-APE">
-                            <size key="itemSize" width="357" height="157"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="itemSize" width="357" height="168"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="7" minY="7" maxX="7" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellReview" id="lWs-e2-hyu" customClass="ReviewCollectionViewCell" customModule="Productreview2" customModuleProvider="target">
-                                <rect key="frame" x="9" y="7" width="357" height="157"/>
+                                <rect key="frame" x="9" y="57" width="357" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="357" height="157"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="357" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่อ:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQJ-M8-JTN">
-                                            <rect key="frame" x="20" y="0.0" width="24" height="27"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-30-ZHl">
-                                            <rect key="frame" x="48" y="0.0" width="39.666666666666657" height="27"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                            <rect key="frame" x="23.999999999999996" y="0.0" width="54.666666666666657" height="28"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp3-7K-UzD">
-                                            <rect key="frame" x="75" y="36" width="35" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp3-7K-UzD">
+                                            <rect key="frame" x="31" y="38" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="OtM-hp-8qV"/>
+                                                <constraint firstAttribute="height" constant="44" id="Urq-ej-9yT"/>
+                                            </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                     <integer key="value" value="10"/>
@@ -558,34 +555,25 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วันที่:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukj-sf-mpM">
-                                            <rect key="frame" x="158" y="0.0" width="34" height="27"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB4-Au-NgN">
-                                            <rect key="frame" x="200" y="0.0" width="131" height="27"/>
+                                            <rect key="frame" x="217" y="0.0" width="129" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="27" id="5Fn-t0-gly"/>
-                                                <constraint firstAttribute="width" constant="131" id="uSg-xY-5cp"/>
+                                                <constraint firstAttribute="height" constant="27" id="40M-QL-iCK"/>
+                                                <constraint firstAttribute="width" constant="129" id="bSd-kY-YnN"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxD-rd-CS1">
-                                            <rect key="frame" x="38" y="39" width="39.333333333333343" height="27"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dateicon" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-9n-fr7">
+                                            <rect key="frame" x="192.66666666666666" y="6" width="16" height="15"/>
+                                        </imageView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ไม่มีข้อมูล..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ssu-lf-h02">
-                                            <rect key="frame" x="109" y="34" width="247" height="109"/>
-                                            <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="98" y="39" width="250" height="109"/>
+                                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="109" id="0f8-1Y-j4P"/>
-                                                <constraint firstAttribute="width" constant="247" id="mWE-mD-xAq"/>
+                                                <constraint firstAttribute="height" constant="109" id="SQS-C0-0nS"/>
+                                                <constraint firstAttribute="width" constant="250" id="tdF-Ga-73v"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -596,37 +584,24 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </textView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="สินค้า:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX0-DS-zfa">
-                                            <rect key="frame" x="0.0" y="124" width="43" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hI-8C-gQG">
-                                            <rect key="frame" x="44" y="124" width="64" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="top" secondItem="pQJ-M8-JTN" secondAttribute="bottom" constant="12" id="7t2-zJ-rms"/>
-                                    <constraint firstAttribute="trailing" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="1" id="9lP-eK-L5s"/>
-                                    <constraint firstItem="ukj-sf-mpM" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="AwR-aw-Jiu"/>
-                                    <constraint firstItem="pQJ-M8-JTN" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leading" constant="20" id="NNq-J1-zcH"/>
-                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="leading" secondItem="pQJ-M8-JTN" secondAttribute="trailing" constant="4" id="OAx-y3-wcJ"/>
-                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="XlY-xd-DJi"/>
-                                    <constraint firstAttribute="bottom" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="14" id="a2L-vS-GaK"/>
-                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="leading" secondItem="ukj-sf-mpM" secondAttribute="trailing" constant="8" id="ceT-V9-gCl"/>
-                                    <constraint firstItem="pQJ-M8-JTN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="cpe-t7-8JH"/>
-                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="gEY-sa-6Ua"/>
-                                    <constraint firstItem="NxD-rd-CS1" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="30" id="gRX-pb-vFw"/>
-                                    <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="ukj-sf-mpM" secondAttribute="bottom" constant="7" id="qDn-Na-rZU"/>
-                                    <constraint firstItem="ukj-sf-mpM" firstAttribute="leading" secondItem="5Xr-30-ZHl" secondAttribute="trailing" constant="70.670000000000002" id="v8I-gB-hKg"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="lp3-7K-UzD" secondAttribute="bottom" constant="78" id="2IN-p4-cwf"/>
+                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="top" secondItem="5Xr-30-ZHl" secondAttribute="bottom" constant="10" id="5eV-pe-hkG"/>
+                                    <constraint firstItem="lp3-7K-UzD" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leadingMargin" constant="23" id="EcK-12-m5o"/>
+                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="leading" secondItem="nCi-9n-fr7" secondAttribute="trailing" constant="8" id="QUO-Vy-ueY"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="top" secondItem="bB4-Au-NgN" secondAttribute="bottom" constant="12" id="SYO-7K-Qjj"/>
+                                    <constraint firstAttribute="trailing" secondItem="bB4-Au-NgN" secondAttribute="trailing" constant="11" id="T6U-U0-nRm"/>
+                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="bNj-KD-Zmn"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ssu-lf-h02" secondAttribute="bottom" constant="12" id="mTS-ez-945"/>
+                                    <constraint firstItem="nCi-9n-fr7" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" constant="6" id="oWl-w6-Rqe"/>
+                                    <constraint firstItem="5Xr-30-ZHl" firstAttribute="leading" secondItem="lWs-e2-hyu" secondAttribute="leading" constant="24" id="oo2-VE-LDA"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="ssu-lf-h02" secondAttribute="trailing" constant="1" id="p0a-le-XaP"/>
+                                    <constraint firstItem="nCi-9n-fr7" firstAttribute="leading" secondItem="5Xr-30-ZHl" secondAttribute="trailing" constant="114" id="p7C-ID-OeR"/>
+                                    <constraint firstItem="ssu-lf-h02" firstAttribute="leading" secondItem="lp3-7K-UzD" secondAttribute="trailing" constant="23" id="vph-a1-iSj"/>
+                                    <constraint firstItem="bB4-Au-NgN" firstAttribute="top" secondItem="lWs-e2-hyu" secondAttribute="top" id="yN2-BP-hvg"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -637,13 +612,56 @@
                                 <connections>
                                     <outlet property="productDateReview" destination="bB4-Au-NgN" id="GEm-n2-vCU"/>
                                     <outlet property="productDescReview" destination="ssu-lf-h02" id="Jux-YF-pkm"/>
-                                    <outlet property="productName" destination="3hI-8C-gQG" id="thd-tk-DLk"/>
                                     <outlet property="productNameReview" destination="5Xr-30-ZHl" id="YkZ-5C-qj9"/>
-                                    <outlet property="productRank" destination="NxD-rd-CS1" id="bZy-DL-bxD"/>
                                     <outlet property="productReviewIcon" destination="lp3-7K-UzD" id="zCg-Xt-alw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ShowHeader" id="IJQ-5I-LqO" customClass="ReviewCollectionViewCell" customModule="Productreview2" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verygood" translatesAutoresizingMaskIntoConstraints="NO" id="jqt-f0-DLJ">
+                                    <rect key="frame" x="39" y="12" width="27" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="good" translatesAutoresizingMaskIntoConstraints="NO" id="aBJ-pF-5TM">
+                                    <rect key="frame" x="164" y="12" width="27" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bad" translatesAutoresizingMaskIntoConstraints="NO" id="vK9-Kx-szm">
+                                    <rect key="frame" x="280" y="12" width="27" height="27"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Zf-BIM">
+                                    <rect key="frame" x="68" y="15" width="29" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn7-E9-xBA">
+                                    <rect key="frame" x="193" y="15" width="29" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2j-Ob-Qh9">
+                                    <rect key="frame" x="309" y="15" width="29" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <outlet property="numberOfGood" destination="tn7-E9-xBA" id="v7J-hd-PHl"/>
+                                <outlet property="numberOfVerygood" destination="bDb-Zf-BIM" id="tBX-tR-VQK"/>
+                                <outlet property="numberOfbad" destination="x2j-Ob-Qh9" id="7d6-nT-iqa"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="ZZu-E1-qNo" id="lep-La-a1C"/>
                             <outlet property="delegate" destination="ZZu-E1-qNo" id="c6y-uD-FiU"/>
@@ -662,7 +680,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWJ-cG-mfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="30"/>
+            <point key="canvasLocation" x="1076" y="328.81773399014781"/>
         </scene>
         <!--เพิ่มสินค้า-->
         <scene sceneID="tne-QT-ifu">
@@ -1223,6 +1241,6 @@
         <image name="verygood" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PlY-AS-oae"/>
+        <segue reference="mHi-Ne-Rzt"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,10 +1,3 @@
-//
-//  HomepageCollectionViewCell.swift
-//  Productreview2
-//
-//  Created by thospol on 6/7/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
 
 import UIKit
 
@@ -36,7 +29,7 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 	func configureData(value: Product){
 		productImage.image = value.photo
 		productName.text = value.product
-		productPrice.text = "\(String(value.price))"
+		productPrice.text = "\(String(value.price)) ฿"
 		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)
 		let numberOfVerygood = value.veryGoods
 		let numberOfgood = value.goods

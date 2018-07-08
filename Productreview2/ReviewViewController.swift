@@ -1,13 +1,14 @@
 import UIKit
 
 class ReviewViewController: UICollectionViewController {
-	private let reuseIdentifier = "cellReview"
 	
+	@IBOutlet weak var headerReview: ReviewCollectionViewCell!
+	private let reuseIdentifier = "cellReview"
 	var productFromProduct: Product?
 	var checkNameProduct: String?
 	var indexpathProduct: IndexPath?
 	
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
 		
 		
@@ -16,12 +17,22 @@ class ReviewViewController: UICollectionViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		collectionView?.reloadData()
+		
 	}
+	
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productFromProduct?.reviewProduct.count ?? 0
     }
+	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+																		 withReuseIdentifier: "ShowHeader",
+			for: indexPath) as! ReviewCollectionViewCell
+		 let Production = productFromProduct
+		headerView.configureWithHeader(value: Production!)
+		return headerView
+	}
 	
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

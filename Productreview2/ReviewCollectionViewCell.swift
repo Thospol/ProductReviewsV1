@@ -7,6 +7,9 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var productDescReview: UITextView!
 	@IBOutlet weak var productRank: UILabel!
 	@IBOutlet weak var productName: UILabel!
+	@IBOutlet weak var numberOfVerygood: UILabel!
+	@IBOutlet weak var numberOfGood: UILabel!
+	@IBOutlet weak var numberOfbad: UILabel!
 	
 	override func awakeFromNib() {
 		
@@ -26,8 +29,13 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		productNameReview.text = value.RName
 		productDateReview.text = value.viewDate
 		productDescReview.text = value.RComment
-		productRank.text =  value.RIcon?.rawValue
-		productName.text = value.RProductName
+		//productRank.text =  value.RIcon?.rawValue
+		//productName.text = value.RProductName
 		productReviewIcon.setBackgroundImage(value.colorButton, for: .normal)
+	}
+	func configureWithHeader(value: Product) {
+		numberOfVerygood.text = String(value.veryGoods)
+		numberOfGood.text = String(value.goods)
+		numberOfbad.text = String(value.bads)
 	}
 }
