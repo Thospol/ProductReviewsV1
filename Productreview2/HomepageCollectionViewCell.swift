@@ -17,6 +17,7 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var productIcon: UIImageView!
 	@IBOutlet weak var prodcuctNumberOfIcon: UILabel!
 	@IBOutlet weak var productNumberOfReview: UILabel!
+	var ImageIconValueMax: UIImage?
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -35,7 +36,24 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 	func configureData(value: Product){
 		productImage.image = value.photo
 		productName.text = value.product
-		productPrice.text = "\(String(value.price)) ฿"
+		productPrice.text = "\(String(value.price))"
 		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)
+		let numberOfVerygood = value.veryGoods
+		let numberOfgood = value.goods
+		let numberOfbads = value.bads
+		let arraynumber = [numberOfVerygood,numberOfgood,numberOfbads]
+		let x = arraynumber.max()
+		if value.veryGoods == x{
+			ImageIconValueMax = UIImage(named: "verygood")
+		}
+		else if value.goods == x{
+			ImageIconValueMax = UIImage(named: "good")
+		}
+		else{
+			ImageIconValueMax = UIImage(named: "bad")
+		}
+		productNumberOfReview.text = String(describing: x!)
+		productIcon.image = ImageIconValueMax
+		
 	}
 }

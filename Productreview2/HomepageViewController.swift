@@ -13,6 +13,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		self.navigationController?.isNavigationBarHidden = true
 		loadSampleMeals();
 	}
 	override func viewDidAppear(_ animated: Bool) {
@@ -67,7 +68,6 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 			self.indexPath = indexPath
 			performSegue(withIdentifier: "ShowDetail", sender: nil)
 		}
-		
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let showDet = segue.destination as? ShowDetailViewController{

@@ -34,6 +34,6 @@ class ShowDetailCollectionViewCell: UICollectionViewCell {
 		textviewReview.numberOfLines = 4
 		textviewReview.text = value.RComment
 		//rankReviewLabel.text =  value.RIcon?.rawValue
-		buttonReview.setBackgroundImage(value.colorButton, for: .normal)
+	buttonReview.setBackgroundImage(value.colorButton, for: .normal)
 	}
 }

@@ -829,13 +829,10 @@
                                 <color key="textColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-Jy-bW2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-Jy-bW2">
                                 <rect key="frame" x="98" y="563" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Bxs-vD-2A6"/>
-                                    <constraint firstAttribute="height" constant="44" id="Yip-mJ-say"/>
-                                </constraints>
-                                <state key="normal" image="verygood"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="verygood"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -846,13 +843,10 @@
                                     <action selector="ClickIconGreen:" destination="0FH-JW-drq" eventType="touchUpInside" id="jYl-xn-61t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-sf-mvx">
-                                <rect key="frame" x="233" y="563" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Jtd-HP-fbS"/>
-                                    <constraint firstAttribute="width" constant="44" id="gSz-ti-Zlx"/>
-                                </constraints>
-                                <state key="normal" image="bad"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-sf-mvx">
+                                <rect key="frame" x="229" y="563" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="bad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -863,32 +857,10 @@
                                     <action selector="ClickIconRed:" destination="0FH-JW-drq" eventType="touchUpInside" id="EIq-O3-Ubc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ชื่อผู้รีวิว" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="igz-gO-ulA" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="669" width="343" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="Rah-zR-9fl"/>
-                                    <constraint firstAttribute="height" constant="27" id="h3a-20-tdQ"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
-                                        <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="ชื่อผู้รีวิว"/>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsl-5B-Vox">
-                                <rect key="frame" x="163" y="563" width="48" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="7Bb-9a-DGr"/>
-                                    <constraint firstAttribute="width" constant="48" id="7HL-h3-i3w"/>
-                                </constraints>
-                                <state key="normal" image="good"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsl-5B-Vox">
+                                <rect key="frame" x="163" y="563" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="good"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -946,12 +918,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-Oa-gLR">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-Oa-gLR">
                                 <rect key="frame" x="62" y="730" width="250" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="gX7-NV-ixW"/>
-                                    <constraint firstAttribute="width" constant="250" id="lW6-C5-0AY"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="รีวิว" backgroundImage="buttonadd"/>
@@ -965,75 +934,71 @@
                                     <segue destination="K6e-qt-Eqs" kind="unwind" unwindAction="unwindToReviewProductListWithSender:" id="qu5-C8-HX2"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="รีวิวของคุณ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dlB-a4-g1V" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                <rect key="frame" x="16" y="615" width="343" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="FQA-SK-VkZ"/>
-                                    <constraint firstAttribute="height" constant="27" id="wdj-Ro-6pp"/>
-                                </constraints>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NGU-aL-S4d" customClass="JVFloatLabeledTextView">
+                                <rect key="frame" x="16" y="605" width="343" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
                                         <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
-                                        <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="รีวิวของคุณ"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="รีวิวของคุณ"/>
                                 </userDefinedRuntimeAttributes>
-                            </textField>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-z7-9od" customClass="JVFloatLabeledTextView">
+                                <rect key="frame" x="16" y="669" width="343" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
+                                        <color key="value" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="ชื่อผู้รีวิว"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vhw-Jy-bW2" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="98" id="4QY-5G-sKY"/>
                             <constraint firstItem="cN0-mA-Y4k" firstAttribute="top" secondItem="TE9-UP-vYa" secondAttribute="bottom" constant="3" id="81e-R3-PRg"/>
                             <constraint firstItem="TE9-UP-vYa" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="D0G-4l-JWN"/>
-                            <constraint firstItem="Jsl-5B-Vox" firstAttribute="leading" secondItem="vhw-Jy-bW2" secondAttribute="trailing" constant="21" id="Du3-37-br4"/>
-                            <constraint firstItem="igz-gO-ulA" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="E2l-HX-gVv"/>
-                            <constraint firstItem="dlB-a4-g1V" firstAttribute="top" secondItem="vhw-Jy-bW2" secondAttribute="bottom" constant="8" id="Iuf-nW-6bj"/>
-                            <constraint firstItem="WIc-Oa-gLR" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="62" id="KkA-fO-vsj"/>
-                            <constraint firstItem="FWa-sf-mvx" firstAttribute="top" secondItem="ohg-ys-6pW" secondAttribute="bottom" constant="8" id="NdS-69-19N"/>
                             <constraint firstItem="wLZ-vw-gIH" firstAttribute="top" secondItem="vhB-Qo-n36" secondAttribute="top" constant="5" id="QXC-7Y-nCo"/>
                             <constraint firstItem="sbl-ta-3FW" firstAttribute="top" secondItem="3X2-Wg-Nb3" secondAttribute="bottom" constant="16" id="Qhs-jb-aSN"/>
                             <constraint firstItem="dJW-bC-Loe" firstAttribute="top" secondItem="wLZ-vw-gIH" secondAttribute="bottom" constant="21" id="QrO-hd-T6X"/>
-                            <constraint firstItem="WIc-Oa-gLR" firstAttribute="bottom" secondItem="vhB-Qo-n36" secondAttribute="bottom" id="RET-Xh-g4I"/>
                             <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="TE9-UP-vYa" secondAttribute="trailing" constant="16" id="SGe-J2-1PN"/>
                             <constraint firstItem="3X2-Wg-Nb3" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="ThX-F3-FS3"/>
                             <constraint firstItem="cN0-mA-Y4k" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" id="Wwc-3G-Bjt"/>
-                            <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="dlB-a4-g1V" secondAttribute="trailing" constant="16" id="asJ-AH-Gya"/>
-                            <constraint firstItem="dlB-a4-g1V" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="baq-9Y-ZBS"/>
                             <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="dJW-bC-Loe" secondAttribute="trailing" constant="16" id="cvv-oO-els"/>
                             <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="ohg-ys-6pW" secondAttribute="trailing" constant="16" id="dca-Bp-DCN"/>
                             <constraint firstItem="TE9-UP-vYa" firstAttribute="top" secondItem="sbl-ta-3FW" secondAttribute="bottom" constant="-11" id="eDY-v2-Cno"/>
-                            <constraint firstItem="WIc-Oa-gLR" firstAttribute="top" secondItem="igz-gO-ulA" secondAttribute="bottom" constant="34" id="eq3-6Y-r5e"/>
-                            <constraint firstItem="vhw-Jy-bW2" firstAttribute="top" secondItem="ohg-ys-6pW" secondAttribute="bottom" constant="8" id="f3j-dz-GYI"/>
-                            <constraint firstItem="FWa-sf-mvx" firstAttribute="leading" secondItem="Jsl-5B-Vox" secondAttribute="trailing" constant="22" id="gPC-da-8Ow"/>
                             <constraint firstItem="wLZ-vw-gIH" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="69" id="jrp-lR-atg"/>
                             <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="wLZ-vw-gIH" secondAttribute="trailing" constant="70" id="k6b-iA-QzM"/>
-                            <constraint firstItem="Jsl-5B-Vox" firstAttribute="top" secondItem="ohg-ys-6pW" secondAttribute="bottom" constant="8" id="klW-Si-feK"/>
                             <constraint firstItem="3X2-Wg-Nb3" firstAttribute="top" secondItem="dJW-bC-Loe" secondAttribute="bottom" id="ksB-Ij-kp0"/>
                             <constraint firstItem="cN0-mA-Y4k" firstAttribute="trailing" secondItem="vhB-Qo-n36" secondAttribute="trailing" id="m6H-LF-whM"/>
-                            <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="WIc-Oa-gLR" secondAttribute="trailing" constant="63" id="oUO-Yo-vr6"/>
-                            <constraint firstItem="igz-gO-ulA" firstAttribute="top" secondItem="dlB-a4-g1V" secondAttribute="bottom" constant="27" id="qhL-dS-e6O"/>
                             <constraint firstItem="ohg-ys-6pW" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="r1d-gD-5HW"/>
                             <constraint firstItem="sbl-ta-3FW" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="u0Q-Ce-WmH"/>
                             <constraint firstItem="dJW-bC-Loe" firstAttribute="leading" secondItem="vhB-Qo-n36" secondAttribute="leading" constant="16" id="u5B-1l-Qj9"/>
-                            <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="FWa-sf-mvx" secondAttribute="trailing" constant="98" id="vAW-QR-pdt"/>
                             <constraint firstItem="ohg-ys-6pW" firstAttribute="top" secondItem="cN0-mA-Y4k" secondAttribute="bottom" constant="12" id="vw2-7p-54a"/>
-                            <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="igz-gO-ulA" secondAttribute="trailing" constant="16" id="xPX-DE-50F"/>
                             <constraint firstItem="vhB-Qo-n36" firstAttribute="trailing" secondItem="3X2-Wg-Nb3" secondAttribute="trailing" constant="209" id="yl4-wI-uaH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vhB-Qo-n36"/>
                     </view>
-                    <navigationItem key="navigationItem" title="รีวิวสินค้า" id="Ais-iG-a5y"/>
+                    <navigationItem key="navigationItem" title="รีวิวสินค้า" id="DGC-WG-H5T"/>
                     <connections>
                         <outlet property="colorGreen" destination="vhw-Jy-bW2" id="aLq-uf-WyC"/>
                         <outlet property="colorRed" destination="FWa-sf-mvx" id="1GJ-4U-cgy"/>
                         <outlet property="colorYellow" destination="Jsl-5B-Vox" id="bsT-PT-d10"/>
-                        <outlet property="nameReview" destination="igz-gO-ulA" id="gRU-rW-w6Y"/>
-                        <outlet property="peoductReviewDesc" destination="dlB-a4-g1V" id="y9Y-3W-ggl"/>
+                        <outlet property="nameReview" destination="VgB-z7-9od" id="xjc-3c-y9Z"/>
+                        <outlet property="peoductReviewDesc" destination="NGU-aL-S4d" id="pEL-ld-bpF"/>
                         <outlet property="prodcutPrice" destination="3X2-Wg-Nb3" id="ok8-o6-9cj"/>
                         <outlet property="productDesc" destination="TE9-UP-vYa" id="rmF-Vq-LU6"/>
                         <outlet property="productImage" destination="wLZ-vw-gIH" id="KyB-qj-oSB"/>
