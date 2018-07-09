@@ -123,6 +123,7 @@ class AddReviewViewController: UIViewController {
 			
 			let row = indexpathProduct?.row ?? 0
 			UserModel.product[row - 1].reviewProduct.append(review)
+			
 		}
 	}
 	

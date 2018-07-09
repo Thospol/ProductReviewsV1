@@ -124,6 +124,59 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EC383BD220F39D5200DA2424 /* AddProduct */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF4B9720E7ABC2000C57FA /* AddProductViewController.swift */,
+			);
+			path = AddProduct;
+			sourceTree = "<group>";
+		};
+		EC383BD320F39DBE00DA2424 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				EC220C6520EFB53B00D9E32F /* HomepageCollectionViewCell.swift */,
+				EC220C6920EFB60300D9E32F /* HomepageViewController.swift */,
+				EC220C6B20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		EC383BD420F39E5100DA2424 /* Showreview */ = {
+			isa = PBXGroup;
+			children = (
+				EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */,
+				EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */,
+			);
+			path = Showreview;
+			sourceTree = "<group>";
+		};
+		EC383BD520F39E7F00DA2424 /* AddReview */ = {
+			isa = PBXGroup;
+			children = (
+				EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */,
+			);
+			path = AddReview;
+			sourceTree = "<group>";
+		};
+		EC383BD620F39EB500DA2424 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF4BAA20E7ABE9000C57FA /* SukhumvitSet.ttc */,
+				EC220C6320EFB04600D9E32F /* Gotham-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EC383BD720F39EEF00DA2424 /* ShowProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */,
+				EC220C4720ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift */,
+			);
+			path = ShowProductDetail;
+			sourceTree = "<group>";
+		};
 		EC3882DE20EC66B000C60281 /* Productreview2Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,30 +218,25 @@
 		ECFF4B9420E7ABC2000C57FA /* Productreview2 */ = {
 			isa = PBXGroup;
 			children = (
+				EC383BD720F39EEF00DA2424 /* ShowProductDetail */,
+				EC383BD620F39EB500DA2424 /* Font */,
+				EC383BD520F39E7F00DA2424 /* AddReview */,
+				EC383BD420F39E5100DA2424 /* Showreview */,
 				EC220C5F20EF7D1500D9E32F /* BaseXibView.swift */,
+				EC383BD320F39DBE00DA2424 /* Homepage */,
+				EC383BD220F39D5200DA2424 /* AddProduct */,
 				ECEE97C720EB9F83003EE9D8 /* Model */,
 				ECFF4B9520E7ABC2000C57FA /* AppDelegate.swift */,
-				ECFF4B9720E7ABC2000C57FA /* AddProductViewController.swift */,
-				ECFF4BB420E7F37D000C57FA /* ShowDetailViewController.swift */,
 				EC220C5920EF4D5400D9E32F /* ProductDetailXibView.xib */,
 				EC220C5B20EF4E1100D9E32F /* ProductDetailXibView.swift */,
+				EC220C5D20EF5D9000D9E32F /* ProductDetailViewController.swift */,
 				ECFF4B9920E7ABC2000C57FA /* Main.storyboard */,
-				ECFF4BAA20E7ABE9000C57FA /* SukhumvitSet.ttc */,
-				EC220C6320EFB04600D9E32F /* Gotham-Medium.otf */,
 				ECFF4B9F20E7ABC4000C57FA /* Assets.xcassets */,
 				ECFF4BA120E7ABC4000C57FA /* LaunchScreen.storyboard */,
 				ECFF4BA420E7ABC4000C57FA /* Info.plist */,
 				ECFF4B9C20E7ABC2000C57FA /* Productreview2.xcdatamodeld */,
 				ECFF4BAC20E7B209000C57FA /* ProductCollectionViewController.swift */,
 				ECFF4BB020E7BFAA000C57FA /* ProductCollectionViewCell.swift */,
-				EC76EB9620EA1DE900184EA7 /* ReviewViewController.swift */,
-				EC76EB9820EA25E900184EA7 /* ReviewCollectionViewCell.swift */,
-				EC76EB9C20EA7A8100184EA7 /* AddReviewViewController.swift */,
-				EC220C4720ECF07E00D9E32F /* ShowDetailCollectionViewCell.swift */,
-				EC220C5D20EF5D9000D9E32F /* ProductDetailViewController.swift */,
-				EC220C6520EFB53B00D9E32F /* HomepageCollectionViewCell.swift */,
-				EC220C6920EFB60300D9E32F /* HomepageViewController.swift */,
-				EC220C6B20F1F59200D9E32F /* HomepageAddCollectionViewCell.swift */,
 			);
 			path = Productreview2;
 			sourceTree = "<group>";

@@ -1,19 +1,19 @@
 import UIKit
-
 class ReviewViewController: UICollectionViewController {
 	private let reuseIdentifier = "cellReview"
 	private let reuseIdentifier2 = "cellReviewadd"
 	var productFromProduct: Product?
 	var checkNameProduct: String?
 	var indexpathProduct: IndexPath?
-	
+
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		collectionView?.reloadData()
+		productFromProduct?.manageRank()
+		collectionView?.reloadSections(IndexSet([0]))
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -30,16 +30,13 @@ class ReviewViewController: UICollectionViewController {
 		
 		return (productFromProduct?.reviewProduct.count)! + 1
     }
-	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-																		 withReuseIdentifier: "ShowHeader",
-			for: indexPath) as! ReviewCollectionViewCell
-		 let Production = productFromProduct
+	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,at indexPath: IndexPath) -> UICollectionReusableView {
+		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ShowHeader",for: indexPath) as! ReviewCollectionViewCell
+		let Production = productFromProduct
 		headerView.configureWithHeader(value: Production!)
 		return headerView
 	}
 	
-
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		if indexPath.item == 0{
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! ReviewCollectionViewCell
@@ -52,7 +49,6 @@ class ReviewViewController: UICollectionViewController {
 		let product = reviewProduct[indexPath.row - 1]
 		cell.configureWith(value: product)
         return cell
-		
 }
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
@@ -64,7 +60,6 @@ class ReviewViewController: UICollectionViewController {
 				print("Index path is:\(viewController.indexpathProduct!)")
 			}
 		}
-		
 	}
 	
 	@IBAction func CancleReviewCollection(_ sender: Any) {
@@ -80,6 +75,7 @@ class ReviewViewController: UICollectionViewController {
 			fatalError("Unexpected")
 		}
 	}
+	
 	@IBAction func unwindToReviewProductList(sender: UIStoryboardSegue) {
 	}
 }

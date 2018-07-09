@@ -1,10 +1,3 @@
-//
-//  HomepageAddCollectionViewCell.swift
-//  Productreview2
-//
-//  Created by thospol on 8/7/61.
-//  Copyright © พ.ศ. 2561 thospol. All rights reserved.
-//
 
 import UIKit
 

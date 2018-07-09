@@ -17,9 +17,13 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 		loadSampleMeals();
 	}
 	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated);	self.navigationController?.isNavigationBarHidden = true
 		col?.reloadData()
 	}
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		self.navigationController?.isNavigationBarHidden = true
+	}
+
 	//REMARK:- collectionView
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return UserModel.product.count + 1
