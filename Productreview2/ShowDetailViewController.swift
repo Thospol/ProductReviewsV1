@@ -87,7 +87,6 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			fatalError("Unexpected")
 		}
     }
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? AddProductViewController{
@@ -107,7 +106,6 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			print("Data is:\(data)")
 			print("Index path is:\(ReviewViewController.indexpathProduct!)")
 			print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
-				
 			}
 		}
 	}

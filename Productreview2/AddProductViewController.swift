@@ -88,8 +88,8 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
 			case .edit:
 				guard let indexPath = indexpathProduct else { return }
 				
-				UserModel.product[indexPath.row] = product
-				UserModel.product[indexPath.row].reviewProduct = (dataProductViewcontroller?.reviewProduct)!
+				UserModel.product[indexPath.row - 1] = product
+				UserModel.product[indexPath.row - 1].reviewProduct = (dataProductViewcontroller?.reviewProduct)!
 			}
 		}
 	}

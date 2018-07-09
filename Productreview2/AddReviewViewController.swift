@@ -123,9 +123,7 @@ class AddReviewViewController: UIViewController {
 			let review = ReviewProduct(RProductName: productname, RProductImage: photos, RProductDesc: productDesccription, RIcon: ranking, RComment: reviewDesc, RName: nameReviews, RDate: Date(), colorButton: colorset)
 			
 			let row = indexpathProduct?.row ?? 0
-			UserModel.product[row].reviewProduct.append(review)
-			
-			
+			UserModel.product[row - 1].reviewProduct.append(review)
 		}
 	}
 	

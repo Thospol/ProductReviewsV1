@@ -7,6 +7,7 @@ class ReviewViewController: UICollectionViewController {
 	var indexpathProduct: IndexPath?
 	
 	override func viewDidLoad() {
+		
         super.viewDidLoad()
 		
 		
@@ -15,10 +16,8 @@ class ReviewViewController: UICollectionViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		collectionView?.reloadData()
-		
 	}
 	
-
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productFromProduct?.reviewProduct.count ?? 0

@@ -22,7 +22,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	}
 	//REMARK:- collectionView
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return UserModel.product.count
+		return UserModel.product.count + 1
 		
 	}
 	
@@ -32,7 +32,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 			return cell
 		}else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! HomepageCollectionViewCell
-			let products = UserModel.product[indexPath.row]
+			let products = UserModel.product[indexPath.row - 1]
 			cell.configureData(value: products)
 			return cell
 		}
@@ -40,16 +40,13 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	
 	//REMARK:-Mockdata
 	func loadSampleMeals() {
-		let photo = UIImage(named: "add")
 		let photo1 = UIImage(named: "product1")!
 		let photo2 = UIImage(named: "product2")!
 		let photo3 = UIImage(named: "product3")!
-		let addproduct1 = Product(product: "กาแฟอราบิกาคั่วกลาง", photo: photo, desc: "", price: 180)
 		let addproduct2 = Product(product: "กาแฟอราบิกาคั่วกลาง", photo: photo1, desc: "กาแฟอาราบิก้าคั่วกลาง แบบเมล็ด ขนาด 250 กรัม รสชาติกลมกล่อม กลิ่นหอม ยังคงความเป็นผลไม้และความสดชื่น เงื่อนไขการสั่งสินค้า/ คำแนะนำ สินค้าซื้อแล้วไม่สามารถปรับ เปลี่ยน หรือคืนได้ ยกเว้น สินค้าชำรุด/เสียหาย ไม่เป็นไปตามรูปที่แสดงเท่านั้น จัดจำหน่ายและจัดส่งโดย Abonzo Coffee. สอบถามข้อมูลเพิ่มเติมเกี่ยวกันสินค้า ติดต่อ คุณภัทรชัย 091-070-7272", price: 180)
 		
 		let addproduct3 = Product(product: "กาแฟอราบิกาคั่วอ่อน", photo: photo2, desc: "ไม่มีข้อมูล", price: 200)
 		let addproduct4 = Product(product: "กาแฟอราบิกาคั่วเข้ม", photo: photo3, desc: "ไม่มีข้อมูล", price: 200)
-		UserModel.product.append(addproduct1)
 		UserModel.product.append(addproduct2)
 		UserModel.product.append(addproduct3)
 		UserModel.product.append(addproduct4)
@@ -64,7 +61,7 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 			performSegue(withIdentifier: "AddItem", sender: nil)
 		}
 		else {
-			pushData = UserModel.product[indexPath.row]
+			pushData = UserModel.product[indexPath.row - 1]
 			self.indexPath = indexPath
 			performSegue(withIdentifier: "ShowDetail", sender: nil)
 		}
