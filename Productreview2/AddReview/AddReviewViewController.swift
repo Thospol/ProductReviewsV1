@@ -13,7 +13,7 @@ class AddReviewViewController: UIViewController {
 	@IBOutlet weak var reviewButton: UIButton!
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
-	var Rank: ReviewRank? = ReviewRank.veryGood
+	var Rank: ReviewRank? = ReviewRank.like
 	var imageSet: UIImage?
 	var countCheckClick: Int = 0
 
@@ -134,7 +134,7 @@ class AddReviewViewController: UIViewController {
 		}else if countCheckClick == 1{
 			ChangeReviewGreenFalse()
 		}
-		Rank = ReviewRank.veryGood
+		Rank = ReviewRank.like
 		imageSet = UIImage(named: "verygood")
 		print("VeryGood")
 		
@@ -145,7 +145,7 @@ class AddReviewViewController: UIViewController {
 		}else if countCheckClick == 1 {
 			ChangeReviewYellowFalse()
 		}
-		Rank = ReviewRank.good
+		Rank = ReviewRank.fair
 		imageSet = UIImage(named: "good")
 		print("Good")
 	}

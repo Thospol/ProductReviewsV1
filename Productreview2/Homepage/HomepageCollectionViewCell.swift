@@ -31,15 +31,15 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 		productName.text = value.product
 		productPrice.text = "\(String(value.price)) ฿"
 		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)
-		let numberOfVerygood = value.veryGoods
-		let numberOfgood = value.goods
+		let numberOfVerygood = value.likes
+		let numberOfgood = value.fairs
 		let numberOfbads = value.bads
 		let arraynumber = [numberOfVerygood,numberOfgood,numberOfbads]
 		let x = arraynumber.max()
-		if value.veryGoods == x{
+		if value.likes == x{
 			ImageIconValueMax = UIImage(named: "verygood")
 		}
-		else if value.goods == x{
+		else if value.fairs == x{
 			ImageIconValueMax = UIImage(named: "good")
 		}
 		else{

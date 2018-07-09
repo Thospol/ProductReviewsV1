@@ -47,8 +47,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
 		productReview.text = value.desc 
 		productPrice.text = "\(String(value.price)) ฿"
 		productReview.text = String(value.reviewProduct.count)
-		greenNumberCount.text = String(value.veryGoods)
-		yellowNumberCount.text = String(value.goods)
+		greenNumberCount.text = String(value.likes)
+		yellowNumberCount.text = String(value.fairs)
 		redNumberCount.text = String(value.bads)
 		
 	}

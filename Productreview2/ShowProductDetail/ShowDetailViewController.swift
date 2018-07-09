@@ -33,8 +33,8 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			productimage.image = product.photo
 			productDescription.text = product.desc
 			productPrice.text = "\(String(product.price)) ฿"
-			reviewCountGreen.text = String(product.veryGoods)
-			reviewCountYellow.text = String(product.goods)
+			reviewCountGreen.text = String(product.likes)
+			reviewCountYellow.text = String(product.fairs)
 			reviewCountRed.text = String(product.bads)
 			collectionView.reloadData()
 			

@@ -6,8 +6,8 @@ class Product {
 	var desc: String
 	var price: Int
 	var reviewProduct: [ReviewProduct] = []
-	var veryGoods = 0
-	var goods = 0
+	var likes = 0
+	var fairs = 0
 	var bads = 0
 	
 	init(product: String, photo: UIImage?, desc: String,price: Int) {
@@ -17,13 +17,13 @@ class Product {
 		self.price = price
 	}
 	func manageRank() {
-		veryGoods = 0
-		goods = 0
+		likes = 0
+		fairs = 0
 		bads = 0
 		reviewProduct.forEach { (reviewProduct) in
-			switch reviewProduct.RIcon! {
-			case .veryGood: veryGoods += 1
-			case .good: goods += 1
+			switch reviewProduct.reviewIcon! {
+			case .like: likes += 1
+			case .fair: fairs += 1
 			case .bad: bads += 1
 			}
 		}

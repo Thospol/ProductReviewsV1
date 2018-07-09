@@ -29,10 +29,10 @@ class ShowDetailCollectionViewCell: UICollectionViewCell {
 		layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius:contentView.layer.cornerRadius).cgPath
 	}
 	func configureWith(value: ReviewProduct) {
-		nameProviderReview.text = value.RName
+		nameProviderReview.text = value.reviewName
 		dateReviewLabel.text = value.viewDate
 		textviewReview.numberOfLines = 4
-		textviewReview.text = value.RComment
+		textviewReview.text = value.reviewComment
 		//rankReviewLabel.text =  value.RIcon?.rawValue
 	buttonReview.setBackgroundImage(value.colorButton, for: .normal)
 	}

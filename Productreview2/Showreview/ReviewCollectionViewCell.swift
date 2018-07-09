@@ -25,14 +25,14 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius:contentView.layer.cornerRadius).cgPath
 	}
 	func configureWith(value: ReviewProduct) {
-		productNameReview.text = value.RName
+		productNameReview.text = value.reviewName
 		productDateReview.text = value.viewDate
-		productDescReview.text = value.RComment
+		productDescReview.text = value.reviewComment
 		productReviewIcon.setBackgroundImage(value.colorButton, for: .normal)
 	}
 	func configureWithHeader(value: Product) {
-		numberOfVerygood.text = String(value.veryGoods)
-		numberOfGood.text = String(value.goods)
+		numberOfVerygood.text = String(value.likes)
+		numberOfGood.text = String(value.fairs)
 		numberOfbad.text = String(value.bads)
 	}
 }
