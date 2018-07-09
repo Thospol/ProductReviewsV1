@@ -5,11 +5,11 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var productDateReview: UILabel!
 	@IBOutlet weak var productReviewIcon: UIButton!
 	@IBOutlet weak var productDescReview: UITextView!
-	@IBOutlet weak var productRank: UILabel!
-	@IBOutlet weak var productName: UILabel!
 	@IBOutlet weak var numberOfVerygood: UILabel!
 	@IBOutlet weak var numberOfGood: UILabel!
 	@IBOutlet weak var numberOfbad: UILabel!
+	@IBOutlet weak var ImageAdd: UIImageView!
+	@IBOutlet weak var addlabel: UILabel!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()

@@ -11,7 +11,6 @@ class AddReviewViewController: UIViewController {
 	@IBOutlet weak var peoductReviewDesc: UITextView!
 	@IBOutlet weak var nameReview: UITextView!
 	@IBOutlet weak var reviewButton: UIButton!
-	
 	var dataProduct : Product?
 	var indexpathProduct: IndexPath?
 	var Rank: ReviewRank? = ReviewRank.veryGood

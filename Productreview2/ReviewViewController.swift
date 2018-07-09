@@ -2,15 +2,13 @@ import UIKit
 
 class ReviewViewController: UICollectionViewController {
 	private let reuseIdentifier = "cellReview"
+	private let reuseIdentifier2 = "cellReviewadd"
 	var productFromProduct: Product?
 	var checkNameProduct: String?
 	var indexpathProduct: IndexPath?
 	
 	override func viewDidLoad() {
-		
         super.viewDidLoad()
-		
-		
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -18,9 +16,19 @@ class ReviewViewController: UICollectionViewController {
 		collectionView?.reloadData()
 	}
 	
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		print("selected Row:\(indexPath.item)")
+		if indexPath.row == 0 {
+			performSegue(withIdentifier: "AddReview", sender: nil)
+		}else{
+			
+		}
+	}
+	
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productFromProduct?.reviewProduct.count ?? 0
+		
+		return (productFromProduct?.reviewProduct.count)! + 1
     }
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -33,17 +41,19 @@ class ReviewViewController: UICollectionViewController {
 	
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		if indexPath.item == 0{
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! ReviewCollectionViewCell
+			
+			return cell
+			}
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ReviewCollectionViewCell
+		
 		let reviewProduct = productFromProduct?.reviewProduct ?? []
-		let product = reviewProduct[indexPath.row]
+		let product = reviewProduct[indexPath.row - 1]
 		cell.configureWith(value: product)
         return cell
-    }
-	
-	@IBAction func AddReview(_ sender: Any) {
-		performSegue(withIdentifier: "AddReview", sender: nil)
-	}
-	
+		
+}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? AddReviewViewController{
