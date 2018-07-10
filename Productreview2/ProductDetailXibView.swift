@@ -10,7 +10,7 @@ class ProductDetailXibView: BaseXibView {
 	@IBOutlet weak var productDetail: UITextView!
 	func setup(product: Product) {
 		productName.text = product.product
-		productImage.image = product.photo
+		productImage.image = product.productConvertToImage
 		productDetail.text = product.desc
 		productPrice.text = String(product.price)
 		

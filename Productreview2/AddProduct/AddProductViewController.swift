@@ -5,7 +5,7 @@ enum Mode {
 	case edit
 	case add
 }
-class AddProductViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate {
+class AddProductViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
     @IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var productName: UITextView!
     @IBOutlet weak var productdesc: UITextView!
@@ -21,7 +21,7 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
         super.viewDidLoad()
 		if let product = dataProductViewcontroller {
 			productName.text   = product.product
-			productimage.image = product.photo
+			productimage.image = product.productConvertToImage
 			productdesc.text = product.desc
 			productPrice.text = String(product.price)
 			showdefaultPictrue.isHidden = true
@@ -84,12 +84,13 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
 			guard let mode = mode else { return }
 			switch mode {
 			case .add:
-				UserModel.product.append(product)
+				Store.default.save(by: product)
+				//UserModel.product.append(product)
 			case .edit:
 				guard let indexPath = indexpathProduct else { return }
-				
-				UserModel.product[indexPath.row - 1] = product
-				UserModel.product[indexPath.row - 1].reviewProduct = (dataProductViewcontroller?.reviewProduct)!
+				 Store.default.edit(product: product, index:indexPath.row)
+				//UserModel.product[indexPath.row - 1] = product
+				//UserModel.product[indexPath.row - 1].reviewProduct = (dataProductViewcontroller?.reviewProduct)!
 			}
 		}
 	}

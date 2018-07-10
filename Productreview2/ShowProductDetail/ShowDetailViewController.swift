@@ -3,6 +3,7 @@ import UIKit
 import os.log
 class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
 	
+	@IBOutlet weak var scrollView: UIScrollView!
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var productimage: UIImageView!
     @IBOutlet weak var reviewCountRed: UILabel!
@@ -19,7 +20,8 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	var checkNameProduct: String?
 	
     override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad();
+		view.addSubview(scrollView)
 		
     }
 
@@ -30,7 +32,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			product.manageRank()
 //			navigationItem.title = product.product
 			productName.text   = product.product
-			productimage.image = product.photo
+			productimage.image = product.productConvertToImage
 			productDescription.text = product.desc
 			productPrice.text = "\(String(product.price)) ฿"
 			reviewCountGreen.text = String(product.likes)
@@ -40,9 +42,13 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			
 		}
 	}
+	override func viewWillLayoutSubviews(){
+		super.viewWillLayoutSubviews()
+		scrollView.contentSize = CGSize(width: 375, height: 1000)
+	}
 	// MARK: UICollectionViewDataSource
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return productDetail?.reviewProduct.count ?? 0
+		return (productDetail?.reviewProduct.count)! < 2 ? (productDetail?.reviewProduct.count)! : 2
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

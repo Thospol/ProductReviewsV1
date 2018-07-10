@@ -23,7 +23,7 @@ class AddReviewViewController: UIViewController {
 		productDesc.numberOfLines = 5
 		if let product = dataProduct {
 			productName.text   = product.product
-			productImage.image = product.photo
+			productImage.image = product.productConvertToImage
 			productDesc.text = product.desc
 			prodcutPrice.text = "\(String(product.price)) ฿"
 		}
@@ -111,16 +111,11 @@ class AddReviewViewController: UIViewController {
 	//REMARK:- Segua
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if reviewButton === sender as! UIButton {
-			let photos = productImage.image
-			let productname = productName.text ?? ""
-			let productDesccription = productDesc.text ?? ""
 			let ranking = Rank
 			let reviewDesc = peoductReviewDesc.text ?? ""
 			let nameReviews = nameReview.text ?? ""
 			let colorset = imageSet
-			
-			let review = ReviewProduct(RProductName: productname, RProductImage: photos, RProductDesc: productDesccription, RIcon: ranking, RComment: reviewDesc, RName: nameReviews, RDate: Date(), colorButton: colorset)
-			
+			let review = ReviewProduct(reviewIcon: ranking, reviewComment: reviewDesc, reviewName: nameReviews, reviewDate: Date(), colorButton: colorset)
 			let row = indexpathProduct?.row ?? 0
 			UserModel.product[row - 1].reviewProduct.append(review)
 			
@@ -136,8 +131,6 @@ class AddReviewViewController: UIViewController {
 		}
 		Rank = ReviewRank.like
 		imageSet = UIImage(named: "verygood")
-		print("VeryGood")
-		
 	}
 	@IBAction func ClickIconYellow(_ sender: Any) {
 		if countCheckClick == 0 {
@@ -147,7 +140,6 @@ class AddReviewViewController: UIViewController {
 		}
 		Rank = ReviewRank.fair
 		imageSet = UIImage(named: "good")
-		print("Good")
 	}
 	@IBAction func ClickIconRed(_ sender: Any) {
 		if countCheckClick == 0 {
@@ -157,7 +149,6 @@ class AddReviewViewController: UIViewController {
 		}
 		Rank = ReviewRank.bad
 		imageSet = UIImage(named: "bad")
-		print("Bad")
 	}
 	
 	@IBAction func CancleAddReview(_ sender: Any) {

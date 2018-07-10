@@ -27,7 +27,7 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 	}
 	
 	func configureData(value: Product){
-		productImage.image = value.photo
+		productImage.image = value.productConvertToImage
 		productName.text = value.product
 		productPrice.text = "\(String(value.price)) ฿"
 		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)

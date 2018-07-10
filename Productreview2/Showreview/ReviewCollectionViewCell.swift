@@ -28,7 +28,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
 		productNameReview.text = value.reviewName
 		productDateReview.text = value.viewDate
 		productDescReview.text = value.reviewComment
-		productReviewIcon.setBackgroundImage(value.colorButton, for: .normal)
+		productReviewIcon.setBackgroundImage(value.productConvertToImageChageButton, for: .normal)
 	}
 	func configureWithHeader(value: Product) {
 		numberOfVerygood.text = String(value.likes)

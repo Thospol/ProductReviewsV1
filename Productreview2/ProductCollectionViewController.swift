@@ -76,7 +76,6 @@ class ProductCollectionViewController: UICollectionViewController {
 				if let datas = pushData {
 					showDet.productDetail = datas
 					showDet.indexpathProduct = indexPath
-					showDet.checkNameProduct = datas.product
 				}
 			}
 			else{

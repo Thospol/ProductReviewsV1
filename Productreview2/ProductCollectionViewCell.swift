@@ -42,7 +42,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
 		layer.shadowPath = UIBezierPath(roundedRect:bounds, cornerRadius:contentView.layer.cornerRadius).cgPath
 	}
 	func configureData(value: Product){
-		productImage.image = value.photo
+		productImage.image = value.productConvertToImage
 		productName.text = value.product
 		productReview.text = value.desc 
 		productPrice.text = "\(String(value.price)) ฿"
