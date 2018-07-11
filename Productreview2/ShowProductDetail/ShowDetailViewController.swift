@@ -14,7 +14,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 	@IBOutlet weak var productDescription: UITextView!
 	@IBOutlet weak var editButton: UIBarButtonItem!
 	
-	var productDetail: Product?
+	private var productDetail: Product!
 	var indexpathProduct: IndexPath?
 	var mode: Mode?
 	var checkNameProduct: String?
@@ -24,9 +24,13 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		view.addSubview(scrollView)
 		
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		productDetail = Store.default.get()[indexpathProduct!.row - 1]
+	}
 
 	override func viewDidAppear(_ animated: Bool) {
-	
 		super.viewDidAppear(animated)
 		if let product = productDetail {
 			product.manageRank()
@@ -93,35 +97,32 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 			fatalError("Unexpected")
 		}
     }
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
-		super.prepare(for: segue, sender: sender)
-		if let viewController = segue.destination as? AddProductViewController{
-		if let data = productDetail {
-			viewController.dataProductViewcontroller = data
-			viewController.indexpathProduct = indexpathProduct
-			print("Data is:\(data)")
-			print("Index path is:\(viewController.indexpathProduct!)")
-			viewController.mode = mode //ส่งค่า modeไปยังController ที่ seque ไปซึ่งจะมีตัวแปรmodeอยู่
-			}
-		}
-		if let ReviewViewController = segue.destination as? ReviewViewController{
-			if let data = productDetail{
-			ReviewViewController.productFromProduct = data
-			ReviewViewController.checkNameProduct = checkNameProduct
-			ReviewViewController.indexpathProduct = indexpathProduct
-			print("Data is:\(data)")
-			print("Index path is:\(ReviewViewController.indexpathProduct!)")
-			print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
-			}
-		}
-	}
+	
 	
 	@IBAction func onEdit(sender: UIBarButtonItem) {
 		mode = Mode.edit
-		performSegue(withIdentifier: "ShowDetailEdit", sender: nil)
+		performSegue(withIdentifier: "ShowDetailEdit", sender: productDetail)
 	}
 	@IBAction func ShowallReview(_ sender: Any) {
-		performSegue(withIdentifier: "ShowReview", sender: nil)
+		performSegue(withIdentifier: "ShowReview", sender: productDetail)
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
+		super.prepare(for: segue, sender: sender)
+		if let viewController = segue.destination as? AddProductViewController{
+			viewController.dataProductViewcontroller = sender as? Product
+			viewController.indexpathProduct = indexpathProduct
+			print("Index path is:\(viewController.indexpathProduct!)")
+			viewController.mode = mode //ส่งค่า modeไปยังController ที่ seque ไปซึ่งจะมีตัวแปรmodeอยู่
+		}
+		
+		if let ReviewViewController = segue.destination as? ReviewViewController{
+			//ReviewViewController.checkNameProduct = checkNameProduct
+			ReviewViewController.indexpathProduct = indexpathProduct
+			print("Index path is:\(ReviewViewController.indexpathProduct!)")
+			//print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
+			
+		}
 	}
 	
 }

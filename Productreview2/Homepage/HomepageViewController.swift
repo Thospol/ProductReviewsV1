@@ -9,8 +9,8 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	let reuseIdentifier1 = "Homecell1"
 	let reuseIdentifier2 = "Homecell2"
 	var pushData: Product?
-	var indexPath: IndexPath?
-	var ViewModel = HomeViewModel()
+	var indexPaths: IndexPath?
+	var viewModel = HomeViewModel()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,11 +20,28 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 	override func viewDidAppear(_ animated: Bool) {
 		col?.reloadData()
 	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.navigationController?.isNavigationBarHidden = true
 	}
 	
+	//REMARK:- collectionView
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return viewModel.manageRow()
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		if indexPath.item == 0 {
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier1, for: indexPath as IndexPath) as! HomepageAddCollectionViewCell
+			return cell
+		}else {
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! HomepageCollectionViewCell
+			let products = viewModel.storeProduct()[indexPath.row - 1]
+			cell.configureData(value: products)
+			return cell
+		}
+	}
 	func loadSampleMeals() {
 		let photo1 = UIImage(named: "product1")!
 		let photo2 = UIImage(named: "product2")!
@@ -38,24 +55,6 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 		UserModel.product.append(addproduct4)
 		col?.reloadData()
 	}
-
-	//REMARK:- collectionView
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return ViewModel.manageRow()
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		if indexPath.item == 0 {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier1, for: indexPath as IndexPath) as! HomepageAddCollectionViewCell
-			return cell
-		}else {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! HomepageCollectionViewCell
-			let products = ViewModel.storeProduct()[indexPath.row - 1]
-			cell.configureData(value: products)
-			return cell
-		}
-	}
-	
 	
 	//REMARK:-SelectItemViewComtroller
 	 func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -65,25 +64,12 @@ class HomepageViewController: UIViewController,UICollectionViewDelegate,UICollec
 			performSegue(withIdentifier: "AddItem", sender: nil)
 		}
 		else {
-			pushData = UserModel.product[indexPath.row - 1]
-			self.indexPath = indexPath
-			performSegue(withIdentifier: "ShowDetail", sender: nil)
+			performSegue(withIdentifier: "ShowDetail", sender: indexPath)
 		}
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let showDet = segue.destination as? ShowDetailViewController{
-			if let datas = pushData {
-				showDet.productDetail = datas
-				showDet.indexpathProduct = indexPath
-				showDet.checkNameProduct = datas.product
-			}
-		}
-		else{
-			let ShowDetailViewController = segue.destination as? ProductDetailViewController
-			if let data = pushData {
-				ShowDetailViewController?.modelProduct = data
-				ShowDetailViewController?.indexpathModel = indexPath
-			}
+				showDet.indexpathProduct = sender as! IndexPath
 		}
 	}
 	

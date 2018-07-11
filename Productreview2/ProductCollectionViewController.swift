@@ -74,7 +74,6 @@ class ProductCollectionViewController: UICollectionViewController {
 		super.prepare(for: segue, sender: sender)
 			 if let showDet = segue.destination as? ShowDetailViewController{
 				if let datas = pushData {
-					showDet.productDetail = datas
 					showDet.indexpathProduct = indexPath
 				}
 			}

@@ -37,7 +37,7 @@ class Product: Codable {
 	
 	init(product: String, photo: UIImage?, desc: String,price: Int) {
 		self.product = product
-		self.photo = UIImagePNGRepresentation(photo!) ?? Data.init()
+		self.photo = UIImagePNGRepresentation(photo ?? UIImage()) ?? Data.init()
 		self.desc = desc
 		self.price = price
 	}
@@ -82,9 +82,7 @@ enum ReviewRank:String,Codable {
 
 
 struct Store {
-	
 	static let `default` = Store.init()
-	
 	func save(by product: Product) {
 		var products = Store.default.get()
 		products.append(product)
@@ -92,6 +90,14 @@ struct Store {
 		NSKeyedArchiver.archiveRootObject(propertyListEncoder, toFile: Product.archiveURL.path)
 	}
 	
+	func saveReview(by review: ReviewProduct, index: Int){
+		let products = Store.default.get()
+		let product = products[index]
+		var productReview = product.reviewProduct
+		productReview.append(review)
+		product.reviewProduct = productReview
+		Store.default.edit(product: product, index: index)
+	}
 	
 	func  edit(product: Product, index: Int) {
 		var list = Store.default.get()
@@ -111,16 +117,6 @@ struct Store {
 		NSKeyedArchiver.archiveRootObject(propertyListEncoder, toFile: Product.archiveURL.path)
 	}
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

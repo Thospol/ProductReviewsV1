@@ -654,6 +654,15 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="NHP-Uy-Z0b">
+                                <rect key="frame" x="9" y="413" width="357" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="357" height="168"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ShowHeader" id="IJQ-5I-LqO" customClass="ReviewCollectionViewCell" customModule="Productreview2" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -1083,7 +1092,7 @@
             </objects>
             <point key="canvasLocation" x="1816.8" y="29.55665024630542"/>
         </scene>
-        <!--Abonzo Coffee-->
+        <!--Homepage View Controller-->
         <scene sceneID="IaW-Vz-gcf">
             <objects>
                 <viewController id="d1w-9q-Skz" customClass="HomepageViewController" customModule="Productreview2" customModuleProvider="target" sceneMemberID="viewController">
@@ -1092,11 +1101,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navigationbar" translatesAutoresizingMaskIntoConstraints="NO" id="8vP-13-AFi">
-                                <rect key="frame" x="-1" y="0.0" width="376" height="111"/>
+                                <rect key="frame" x="1" y="0.0" width="374" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shop" translatesAutoresizingMaskIntoConstraints="NO" id="0PH-6b-dX7">
-                                <rect key="frame" x="268" y="31" width="106" height="107"/>
+                                <rect key="frame" x="298" y="45" width="54" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Abonzo Coffee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-Qp-bb7">
@@ -1231,7 +1240,7 @@
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="FXm-Dq-5Kz"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Abonzo Coffee" largeTitleDisplayMode="never" id="3Cd-pJ-4jN"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="3Cd-pJ-4jN"/>
                     <connections>
                         <outlet property="col" destination="hAb-5L-YJH" id="gpC-nB-Qei"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="AddItem" id="PlY-AS-oae"/>
@@ -1296,6 +1305,6 @@
         <image name="verygood" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mHi-Ne-Rzt"/>
+        <segue reference="PlY-AS-oae"/>
     </inferredMetricsTieBreakers>
 </document>

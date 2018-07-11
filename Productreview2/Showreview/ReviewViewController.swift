@@ -2,34 +2,42 @@ import UIKit
 class ReviewViewController: UICollectionViewController {
 	private let reuseIdentifier = "cellReview"
 	private let reuseIdentifier2 = "cellReviewadd"
-	var productFromProduct: Product?
+	
+	private var productFromProduct: Product!
 	var checkNameProduct: String?
 	var indexpathProduct: IndexPath?
-
+	let products = Store.default.get()
+	
 	override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+		super.viewDidLoad()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		productFromProduct = Store.default.get()[indexpathProduct!.row - 1]
+	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		productFromProduct?.manageRank()
+		collectionView?.reloadData()
 		collectionView?.reloadSections(IndexSet([0]))
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		print("selected Row:\(indexPath.item)")
 		if indexPath.row == 0 {
-			performSegue(withIdentifier: "AddReview", sender: nil)
+			performSegue(withIdentifier: "AddReview", sender: productFromProduct)
 		}else{
 			
 		}
 	}
 	
-    // MARK: UICollectionViewDataSource
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
-		return (productFromProduct?.reviewProduct.count)! + 1
-    }
+	// MARK: UICollectionViewDataSource
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return products[indexpathProduct!.row - 1].reviewProduct.count + 1
+	}
+	
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,at indexPath: IndexPath) -> UICollectionReusableView {
 		let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,withReuseIdentifier: "ShowHeader",for: indexPath) as! ReviewCollectionViewCell
 		let Production = productFromProduct
@@ -37,28 +45,26 @@ class ReviewViewController: UICollectionViewController {
 		return headerView
 	}
 	
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		if indexPath.item == 0{
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		if indexPath.item == 0 {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath as IndexPath) as! ReviewCollectionViewCell
-			
 			return cell
+		} else {
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ReviewCollectionViewCell
+			guard let reviewProduct =  productFromProduct?.reviewProduct, !reviewProduct.isEmpty else {
+				return UICollectionViewCell()
 			}
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! ReviewCollectionViewCell
-		
-		let reviewProduct = productFromProduct?.reviewProduct ?? []
-		let product = reviewProduct[indexPath.row - 1]
-		cell.configureWith(value: product)
-        return cell
-}
+			let product = reviewProduct[indexPath.row - 1]
+			cell.configureWith(value: product)
+			return cell
+		}
+	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? AddReviewViewController{
-			if let data = productFromProduct {
-				viewController.dataProduct = data
-				viewController.indexpathProduct = indexpathProduct
-				print("Data is:\(data)")
-				print("Index path is:\(viewController.indexpathProduct!)")
-			}
+			//viewController.dataProduct = sender as? Product
+			viewController.indexpathProduct = indexpathProduct
+			print("Index path is:\(viewController.indexpathProduct!)")
 		}
 	}
 	

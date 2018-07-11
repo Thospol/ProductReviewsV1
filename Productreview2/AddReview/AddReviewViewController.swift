@@ -11,14 +11,14 @@ class AddReviewViewController: UIViewController {
 	@IBOutlet weak var peoductReviewDesc: UITextView!
 	@IBOutlet weak var nameReview: UITextView!
 	@IBOutlet weak var reviewButton: UIButton!
-	var dataProduct : Product?
+	var dataProduct : Product!
 	var indexpathProduct: IndexPath?
 	var Rank: ReviewRank? = ReviewRank.like
 	var imageSet: UIImage?
 	var countCheckClick: Int = 0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		imageSet = UIImage(named: "verygood")
 		productDesc.numberOfLines = 5
 		if let product = dataProduct {
@@ -27,7 +27,13 @@ class AddReviewViewController: UIViewController {
 			productDesc.text = product.desc
 			prodcutPrice.text = "\(String(product.price)) ฿"
 		}
-    }
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		dataProduct = Store.default.get()[indexpathProduct!.row - 1]
+	}
+	
 	func ChageReviewGreenTrue(){
 		colorYellow.isEnabled = false
 		colorRed.isEnabled = false
@@ -115,10 +121,9 @@ class AddReviewViewController: UIViewController {
 			let reviewDesc = peoductReviewDesc.text ?? ""
 			let nameReviews = nameReview.text ?? ""
 			let colorset = imageSet
-			let review = ReviewProduct(reviewIcon: ranking, reviewComment: reviewDesc, reviewName: nameReviews, reviewDate: Date(), colorButton: colorset)
-			let row = indexpathProduct?.row ?? 0
-			UserModel.product[row - 1].reviewProduct.append(review)
 			
+			let review = ReviewProduct(reviewIcon: ranking, reviewComment: reviewDesc, reviewName: nameReviews, reviewDate: Date(), colorButton: colorset)
+			Store.default.saveReview(by: review, index: (indexpathProduct?.row)! - 1)
 		}
 	}
 	

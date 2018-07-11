@@ -5,23 +5,21 @@ class Productreview2Tests: XCTestCase {
 	
 	override func setUp() {
 		super.setUp()
-		UserDefault.default.clearReviewProduct()
+		Store.default.clear()
 	}
 	
 	override func tearDown() {
 		super.tearDown()
-		UserDefault.default.clearReviewProduct()
+		Store.default.clear()
 	}
 	
     func testExample() {
-		var mock = [ReviewProduct].init()
-		mock.append(ReviewProduct.init(RProductName: "Max", RProductImage: nil, RProductDesc: "NA", RIcon: ReviewRank.bad, RComment: "M", RName: "A", RDate: Date.init()))
-		UserDefault.default.setReview(reviewProducts: mock)
-		UserDefault.default.getReviewProducts().forEach { (object) in
-			print(object)
-		}
-		XCTAssertNotNil(UserDefault.default.getReviewProducts())
-		
+		var mockProduct = Product.init(product: "ASD", photo: UIImage.init(), desc: "ASD", price: 12)
+		Store.default.save(by: mockProduct)
+		let review = ReviewProduct.init(reviewIcon: ReviewRank.bad, reviewComment: "AS", reviewName: "DSA", reviewDate: Date.init(), colorButton: UIImage.init())
+		Store.default.saveReview(by: review, index: 0)
+		let list = Store.default.get()
+		debugPrint(list)
     }
 	
 }

@@ -13,7 +13,7 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
     @IBOutlet weak var productButton: UIButton!
 	@IBOutlet weak var showdefaultPictrue: UIImageView!
 	@IBOutlet weak var showdefaultLabel: UILabel!
-	var dataProductViewcontroller : Product?
+	var dataProductViewcontroller : Product!
 	var indexpathProduct: IndexPath?
 	var mode: Mode? = Mode.add
 
@@ -85,12 +85,9 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
 			switch mode {
 			case .add:
 				Store.default.save(by: product)
-				//UserModel.product.append(product)
 			case .edit:
 				guard let indexPath = indexpathProduct else { return }
-				 Store.default.edit(product: product, index:indexPath.row)
-				//UserModel.product[indexPath.row - 1] = product
-				//UserModel.product[indexPath.row - 1].reviewProduct = (dataProductViewcontroller?.reviewProduct)!
+				 Store.default.edit(product: product, index:indexPath.row - 1)
 			}
 		}
 	}
