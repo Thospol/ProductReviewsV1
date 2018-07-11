@@ -16,9 +16,18 @@ class AddReviewViewController: UIViewController {
 	var Rank: ReviewRank? = ReviewRank.like
 	var imageSet: UIImage?
 	var countCheckClick: Int = 0
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		dataProduct = Store.default.get()[indexpathProduct!.row - 1]
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		imageSet = UIImage(named: "verygood")
 		productDesc.numberOfLines = 5
 		if let product = dataProduct {
@@ -27,11 +36,6 @@ class AddReviewViewController: UIViewController {
 			productDesc.text = product.desc
 			prodcutPrice.text = "\(String(product.price)) ฿"
 		}
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		dataProduct = Store.default.get()[indexpathProduct!.row - 1]
 	}
 	
 	func ChageReviewGreenTrue(){
@@ -114,6 +118,7 @@ class AddReviewViewController: UIViewController {
 		colorYellow.frame.origin.y = 563
 		countCheckClick = 0
 	}
+	
 	//REMARK:- Segua
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if reviewButton === sender as! UIButton {
@@ -121,7 +126,6 @@ class AddReviewViewController: UIViewController {
 			let reviewDesc = peoductReviewDesc.text ?? ""
 			let nameReviews = nameReview.text ?? ""
 			let colorset = imageSet
-			
 			let review = ReviewProduct(reviewIcon: ranking, reviewComment: reviewDesc, reviewName: nameReviews, reviewDate: Date(), colorButton: colorset)
 			Store.default.saveReview(by: review, index: (indexpathProduct?.row)! - 1)
 		}
@@ -155,6 +159,7 @@ class AddReviewViewController: UIViewController {
 		Rank = ReviewRank.bad
 		imageSet = UIImage(named: "bad")
 	}
+	
 	
 	@IBAction func CancleAddReview(_ sender: Any) {
 		let isPresentingInAddMealMode = presentingViewController is UINavigationController

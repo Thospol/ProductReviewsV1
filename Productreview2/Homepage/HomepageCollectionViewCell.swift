@@ -31,22 +31,26 @@ class HomepageCollectionViewCell: UICollectionViewCell {
 		productName.text = value.product
 		productPrice.text = "\(String(value.price)) ฿"
 		prodcuctNumberOfIcon.text = String(value.reviewProduct.count)
+		value.manageRank()
 		let numberOfVerygood = value.likes
 		let numberOfgood = value.fairs
 		let numberOfbads = value.bads
 		let arraynumber = [numberOfVerygood,numberOfgood,numberOfbads]
 		let x = arraynumber.max()
 		if value.likes == x{
-			ImageIconValueMax = UIImage(named: "verygood")
+			productIcon.image = UIImage.init(named: "verygood")
+			productNumberOfReview.text = String(describing: x!)
+			
 		}
 		else if value.fairs == x{
-			ImageIconValueMax = UIImage(named: "good")
+			productIcon.image = UIImage.init(named: "good")
+			productNumberOfReview.text = String(describing: x!)
 		}
 		else{
-			ImageIconValueMax = UIImage(named: "bad")
+			productIcon.image = UIImage.init(named: "bad")
+			productNumberOfReview.text = String(describing: x!)
 		}
-		productNumberOfReview.text = String(describing: x!)
-		productIcon.image = ImageIconValueMax
+		
 		
 	}
 }

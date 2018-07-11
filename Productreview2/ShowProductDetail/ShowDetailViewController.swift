@@ -34,7 +34,6 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		super.viewDidAppear(animated)
 		if let product = productDetail {
 			product.manageRank()
-//			navigationItem.title = product.product
 			productName.text   = product.product
 			productimage.image = product.productConvertToImage
 			productDescription.text = product.desc
@@ -78,9 +77,7 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
         guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image")
         }
-        // Set ให้ไปลงใน imageview
         productimage.image = selectedImage
-        // Dismiss the picker.
         dismiss(animated: true, completion: nil)
     }
     
@@ -98,7 +95,6 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		}
     }
 	
-	
 	@IBAction func onEdit(sender: UIBarButtonItem) {
 		mode = Mode.edit
 		performSegue(withIdentifier: "ShowDetailEdit", sender: productDetail)
@@ -107,20 +103,17 @@ class ShowDetailViewController: UIViewController,UIImagePickerControllerDelegate
 		performSegue(withIdentifier: "ShowReview", sender: productDetail)
 	}
 	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //เป็นการส่งค่าไปยังcontrollerที่เราทำsegue
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		super.prepare(for: segue, sender: sender)
 		if let viewController = segue.destination as? AddProductViewController{
 			viewController.dataProductViewcontroller = sender as? Product
 			viewController.indexpathProduct = indexpathProduct
 			print("Index path is:\(viewController.indexpathProduct!)")
-			viewController.mode = mode //ส่งค่า modeไปยังController ที่ seque ไปซึ่งจะมีตัวแปรmodeอยู่
+			viewController.mode = mode
 		}
 		
 		if let ReviewViewController = segue.destination as? ReviewViewController{
-			//ReviewViewController.checkNameProduct = checkNameProduct
 			ReviewViewController.indexpathProduct = indexpathProduct
-			print("Index path is:\(ReviewViewController.indexpathProduct!)")
-			//print("NameProduct is: \(ReviewViewController.checkNameProduct!)")
 			
 		}
 	}

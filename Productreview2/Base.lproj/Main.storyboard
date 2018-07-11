@@ -875,7 +875,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addpictrue" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vw-gIH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-vw-gIH">
                                 <rect key="frame" x="69" y="93" width="236" height="203"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -1292,7 +1292,6 @@
     <resources>
         <image name="Imageadd" width="48" height="36"/>
         <image name="add" width="25" height="25"/>
-        <image name="addpictrue" width="100" height="100"/>
         <image name="addreview" width="52" height="52"/>
         <image name="back" width="12" height="21"/>
         <image name="bad" width="48" height="48"/>
@@ -1305,6 +1304,6 @@
         <image name="verygood" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PlY-AS-oae"/>
+        <segue reference="mHi-Ne-Rzt"/>
     </inferredMetricsTieBreakers>
 </document>

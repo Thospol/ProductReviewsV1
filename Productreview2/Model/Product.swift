@@ -10,6 +10,7 @@ class Product: Codable {
 	var fairs = 0
 	var bads = 0
 	
+	
 	func manageRank() {
 		likes = 0
 		fairs = 0
@@ -25,6 +26,7 @@ class Product: Codable {
 			}
 		}
 	}
+	
 	
 	var productConvertToImage: UIImage? {
 		return UIImage.init(data: photo)
@@ -99,13 +101,21 @@ struct Store {
 		Store.default.edit(product: product, index: index)
 	}
 	
+	func editReview(product: Product,index: Int,review: ReviewProduct) {
+		var productlist = Store.default.get()
+		let productGetRow =  productlist[index]
+		productGetRow.reviewProduct[index] = review
+		Store.default.edit(product: product, index: index)
+	}
+	
+	
 	func  edit(product: Product, index: Int) {
 		var list = Store.default.get()
 		list[index] = product
 		let propertyListEncoder = try! PropertyListEncoder.init().encode(list)
 		NSKeyedArchiver.archiveRootObject(propertyListEncoder, toFile: Product.archiveURL.path)
 	}
-	
+
 	func get() -> [Product] {
 		let data = NSKeyedUnarchiver.unarchiveObject(withFile: Product.archiveURL.path) as? Data ?? Data.init()
 		let value = try? PropertyListDecoder().decode([Product].self, from: data)

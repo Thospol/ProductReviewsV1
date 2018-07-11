@@ -35,7 +35,7 @@ class ReviewViewController: UICollectionViewController {
 	
 	// MARK: UICollectionViewDataSource
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return products[indexpathProduct!.row - 1].reviewProduct.count + 1
+		return productFromProduct.reviewProduct.count + 1
 	}
 	
 	override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,at indexPath: IndexPath) -> UICollectionReusableView {
