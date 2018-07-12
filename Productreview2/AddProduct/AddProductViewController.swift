@@ -88,9 +88,6 @@ class AddProductViewController: UIViewController,UIImagePickerControllerDelegate
 			case .edit:
 				guard let indexPath = indexpathProduct else { return }
 				 Store.default.edit(product: product, index:indexPath.row - 1)
-				
-				
-				
 				//Store.default.editReview(product: product, index: indexPath.row - 1, review: product.reviewProduct[indexPath.row])
 				
 				
